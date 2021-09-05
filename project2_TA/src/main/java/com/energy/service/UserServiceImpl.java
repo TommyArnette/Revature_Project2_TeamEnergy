@@ -4,7 +4,7 @@ import com.energy.dao.UserDao;
 import com.energy.models.User;
 
 public class UserServiceImpl implements UserService{
-    /* Added 9/4 10:35 PM Tommy A.*/
+
     UserDao userDao;
 
     @Override
@@ -20,5 +20,16 @@ public class UserServiceImpl implements UserService{
         }
 
         return currentUser;
+    }
+
+    @Override
+    public void registerNewUser(User user) {
+        userDao.addNewUser(user);
+    }
+
+    @Override
+    public User updateUserInfo(User user) {
+        userDao.updateUserInfo(user);
+        return user;
     }
 }
