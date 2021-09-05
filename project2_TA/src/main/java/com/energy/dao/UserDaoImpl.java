@@ -6,10 +6,21 @@ import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.io.Serializable;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
+    static UserDao userDao;
+
+    public static UserDao getInstance(){
+        if(userDao == null){
+            userDao = new UserDaoImpl();
+        }
+        return userDao;
+    }
+
     @Override
     public void addNewUser(User user) {
         Session session = HibernateUtil.getSession();
@@ -47,6 +58,20 @@ public class UserDaoImpl implements UserDao {
     public User selectUserByName(String username) {
         Session session = HibernateUtil.getSession();
         return session.createQuery("from User where username = '" + username + "'", User.class).getSingleResult();
+    }
+
+    /* Just added this method 9/4 10:30 PM. This is similar to JDBC ? parameter (:username & :password) */
+    @Override
+    public User getUser(User user) {
+        Session session = HibernateUtil.getSession();
+
+        TypedQuery query = session.createQuery("from User where username = :username AND password = :password", User.class);
+        query.setParameter(0, user.getUsername());
+        query.setParameter(1, user.getPassword());
+
+        User currentUser = (User) query.getSingleResult();
+
+        return currentUser;
     }
 
     @Override
