@@ -1,11 +1,16 @@
 package com.energy.service;
 
 import com.energy.dao.UserDao;
+import com.energy.dao.UserDaoImpl;
 import com.energy.models.User;
 
 public class UserServiceImpl implements UserService{
 
     UserDao userDao;
+
+    public UserServiceImpl() {
+        userDao = new UserDaoImpl();
+    }
 
     @Override
     public User login(User user) {
