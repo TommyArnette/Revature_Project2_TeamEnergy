@@ -1,0 +1,21 @@
+
+\
+java:S1118":Add a private constructor to hide the implicit public one.(Ó»şšÿÿÿÿÿ8 Ë÷ë»/
+s
+java:S1104"QMake awsID a static final constant or non-public and provide accessors if needed.(ø½¼Šıÿÿÿÿ8£Ë÷ë»/
+t
+java:S1104"RMake awsKey a static final constant or non-public and provide accessors if needed.(¶˜Ìşÿÿÿÿ8£Ë÷ë»/
+t
+java:S1104"RMake region a static final constant or non-public and provide accessors if needed.(Ò±Óúÿÿÿÿ8£Ë÷ë»/
+s
+java:S1104"VMake bucketName a static final constant or non-public and provide accessors if needed.(ë ­¤8£Ë÷ë»/
+M
+java:S1444"+Make this "public static awsID" field final(ø½¼Šıÿÿÿÿ8¤Ë÷ë»/
+N
+java:S1444",Make this "public static awsKey" field final(¶˜Ìşÿÿÿÿ8¤Ë÷ë»/
+N
+java:S1444",Make this "public static region" field final(Ò±Óúÿÿÿÿ8¤Ë÷ë»/
+M
+java:S1444"0Make this "public static bucketName" field final(ë ­¤8¥Ë÷ë»/
+lsecrets:S6290"GAWS Access Key ID detected here. Remove this credential from your code.(ø½¼Šıÿÿÿÿ8”ğë»/
+psecrets:S6290"KAWS Secret Access Key detected here. Remove this credential from your code.(¶˜Ìşÿÿÿÿ8”ğë»/
