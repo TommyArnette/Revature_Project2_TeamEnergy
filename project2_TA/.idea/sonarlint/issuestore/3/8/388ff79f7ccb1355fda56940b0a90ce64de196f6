@@ -1,0 +1,7 @@
+
+U
+java:S1118":Add a private constructor to hide the implicit public one.(‡Œïøþÿÿÿÿ
+d
+java:S1104"NMake sf a static final constant or non-public and provide accessors if needed.(ô¨Ó¾
+>
+java:S1444"(Make this "public static sf" field final(ô¨Ó¾

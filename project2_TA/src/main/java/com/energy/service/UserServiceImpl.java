@@ -4,8 +4,7 @@ import com.energy.dao.UserDao;
 import com.energy.models.User;
 
 public class UserServiceImpl implements UserService{
-
-    UserDao userDao;
+    static UserDao userDao;
 
     @Override
     public User login(User user) {
