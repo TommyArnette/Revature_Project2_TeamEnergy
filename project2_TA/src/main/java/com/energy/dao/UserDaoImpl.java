@@ -23,6 +23,7 @@ public class UserDaoImpl implements UserDao {
     }
     */
 
+
     @Override
     public void addNewUser(User user) {
         Session session = HibernateUtil.getSession();

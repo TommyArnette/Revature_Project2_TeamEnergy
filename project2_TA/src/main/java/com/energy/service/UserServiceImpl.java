@@ -8,6 +8,7 @@ public class UserServiceImpl implements UserService{
 
     UserDao userDao = new UserDaoImpl();
 
+
     @Override
     public User login(User user) {
         User currentUser = userDao.getUser(user);
