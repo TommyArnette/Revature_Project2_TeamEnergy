@@ -30,5 +30,6 @@
         <mapping class="com.energy.models.Posts"/>
 
 
+
     </session-factory>
 </hibernate-configuration>
