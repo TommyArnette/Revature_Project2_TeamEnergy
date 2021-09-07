@@ -4,10 +4,11 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name="posts")
-public class Posts {
+public class Post {
 
     @Id
     @Column(name="post_id")
@@ -21,9 +22,12 @@ public class Posts {
     @Column(name="post_message")
     private String postMessage;
 
-    @Column(name="user_id_fk")
-    private Integer userIdFk;
-
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
+
+    @OneToMany(mappedBy = "post")
+    private List<Like> likes;
+
+    @OneToMany(mappedBy = "post")
+    private List<PostImage> images;
 }

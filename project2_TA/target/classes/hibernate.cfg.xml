@@ -27,7 +27,7 @@
         <property name="hibernate.hbm2ddl.auto">validate</property>
 
         <mapping class="com.energy.models.User"/>
-        <mapping class="com.energy.models.Post"/>
+        <mapping class="com.energy.models.Posts"/>
 
     </session-factory>
 </hibernate-configuration>

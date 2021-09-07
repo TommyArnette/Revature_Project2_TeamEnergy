@@ -3,7 +3,6 @@ package com.energy.models;
 import javax.persistence.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -37,7 +36,7 @@ public class User {
     private String userProfileImage;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Posts> userPostList = new ArrayList<>();
+    private List<Post> userPostList;
 
     public User() {
     }
@@ -47,8 +46,15 @@ public class User {
         this.password = password;
     }
 
-    public User(Integer userId, String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage, List<Posts> userPostList) {
-        this.userId = userId;
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail) {
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+    }
+
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage, List<Post> userPostList) {
         this.username = username;
         this.password = password;
         this.userFirstName = userFirstName;

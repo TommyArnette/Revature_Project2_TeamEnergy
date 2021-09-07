@@ -54,20 +54,14 @@ public class UserDaoImpl implements UserDao {
         return user;
     }
 
-    @Override
-    public User selectUserByName(String username) {
-        Session session = HibernateUtil.getSession();
-        return session.createQuery("from User where username = '" + username + "'", User.class).getSingleResult();
-    }
-
     /* Just added this method 9/4 10:30 PM. This is similar to JDBC ? parameter (:username & :password) */
     @Override
     public User getUser(User user) {
         Session session = HibernateUtil.getSession();
 
         TypedQuery query = session.createQuery("from User where username = :username AND password = :password", User.class);
-        query.setParameter(0, user.getUsername());
-        query.setParameter(1, user.getPassword());
+        query.setParameter("username", user.getUsername());
+        query.setParameter("password", user.getPassword());
 
         User currentUser = (User) query.getSingleResult();
 
@@ -75,9 +69,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> selectAllUsers() {
+    public List<User> selectAllOtherUsers(User user) {
         Session session = HibernateUtil.getSession();
-        return session.createQuery("from User", User.class).list();
+        return session.createQuery("from User where userId != " + user.getUserId(), User.class).list();
     }
 
 }

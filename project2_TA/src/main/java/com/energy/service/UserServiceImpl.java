@@ -1,11 +1,14 @@
 package com.energy.service;
 
 import com.energy.dao.UserDao;
+import com.energy.dao.UserDaoImpl;
 import com.energy.models.User;
+
+import java.util.List;
 
 public class UserServiceImpl implements UserService{
 
-    UserDao userDao;
+    UserDao userDao = UserDaoImpl.getInstance();
 
     @Override
     public User login(User user) {
@@ -31,5 +34,10 @@ public class UserServiceImpl implements UserService{
     public User updateUserInfo(User user) {
         userDao.updateUserInfo(user);
         return user;
+    }
+
+    @Override
+    public List<User> getFriends(User user) {
+        return userDao.selectAllOtherUsers(user);
     }
 }
