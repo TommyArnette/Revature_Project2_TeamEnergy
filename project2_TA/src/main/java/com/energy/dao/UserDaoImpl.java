@@ -2,17 +2,22 @@ package com.energy.dao;
 
 import com.energy.models.User;
 import com.energy.util.HibernateUtil;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-import javax.persistence.Query;
+import org.jasypt.util.password.BasicPasswordEncryptor;
 import javax.persistence.TypedQuery;
-import java.io.Serializable;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
-    static UserDao userDao;
+    private static UserDao userDao;
+
+    private UserDaoImpl() {
+        try{
+            Class.forName("org.h2.Driver");
+        }catch(ClassNotFoundException e){
+            e.printStackTrace();
+        }
+    }
 
     public static UserDao getInstance(){
         if(userDao == null){
@@ -59,9 +64,8 @@ public class UserDaoImpl implements UserDao {
     public User getUser(User user) {
         Session session = HibernateUtil.getSession();
 
-        TypedQuery query = session.createQuery("from User where username = :username AND password = :password", User.class);
+        TypedQuery query = session.createQuery("from User where username = :username", User.class);
         query.setParameter("username", user.getUsername());
-        query.setParameter("password", user.getPassword());
 
         User currentUser = (User) query.getSingleResult();
 

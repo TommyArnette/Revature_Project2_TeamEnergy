@@ -1,2 +1,4 @@
-package com.energy.service;public interface PostsService {
+package com.energy.service;
+
+public interface PostsService {
 }

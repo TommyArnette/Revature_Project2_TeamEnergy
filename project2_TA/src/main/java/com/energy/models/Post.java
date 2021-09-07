@@ -3,6 +3,7 @@ package com.energy.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -26,8 +27,8 @@ public class Post {
     private User user;
 
     @OneToMany(mappedBy = "post")
-    private List<Like> likes;
+    private List<Like> likes = new ArrayList<>();
 
     @OneToMany(mappedBy = "post")
-    private List<PostImage> images;
+    private List<PostImage> images = new ArrayList<>();
 }

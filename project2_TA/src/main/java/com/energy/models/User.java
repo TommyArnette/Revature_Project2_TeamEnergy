@@ -36,7 +36,7 @@ public class User {
     private String userProfileImage;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Post> userPostList;
+    private List<Post> userPostList = new ArrayList<>();
 
     public User() {
     }
