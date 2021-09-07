@@ -29,5 +29,6 @@ public class PostsDaoImpl implements PostsDao{
     public List<Posts> selectAllPosts() {
        Session session = HibernateUtil.getSession();
        return session.createQuery("from Posts", Posts.class).list();
+
     }
 }

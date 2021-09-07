@@ -6,4 +6,5 @@ public interface UserService {
     public User login(User user);
     public void registerNewUser(User user);
     public User updateUserInfo(User user);
+
 }

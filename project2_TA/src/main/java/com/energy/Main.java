@@ -12,4 +12,5 @@ public class Main {
 
         userService.registerNewUser(u1);
     }
+
 }

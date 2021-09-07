@@ -9,4 +9,5 @@ public interface PostsDao {
 
     List<Posts> userPostList(Integer userIdFk);
     List<Posts> selectAllPosts();
+
 }

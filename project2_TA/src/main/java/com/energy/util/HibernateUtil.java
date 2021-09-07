@@ -24,4 +24,5 @@ public class HibernateUtil {
         session = null;
         sf.close();
     }
+
 }
