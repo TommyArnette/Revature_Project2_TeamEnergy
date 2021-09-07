@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
+    /*
     static UserDao userDao;
 
     public static UserDao getInstance(){
@@ -20,6 +21,7 @@ public class UserDaoImpl implements UserDao {
         }
         return userDao;
     }
+    */
 
     @Override
     public void addNewUser(User user) {

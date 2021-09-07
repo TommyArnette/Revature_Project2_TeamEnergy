@@ -18,7 +18,7 @@ public class User {
     @Column(name="user_username", unique = true, nullable = false, columnDefinition = "varchar(50)")
     private String username;
 
-    @Column(name="user_userpassword", nullable = false, columnDefinition = "varchar(50)")
+    @Column(name="user_password", nullable = false, columnDefinition = "varchar(50)")
     private String password;
 
     @Column(name="user_first_name", nullable = false, columnDefinition = "varchar(50)")
@@ -34,7 +34,7 @@ public class User {
     private String userProfileDescription;
 
     @Column(name="user_profile_image")
-    private byte[] userProfileImage;
+    private String userProfileImage;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private List<Posts> userPostList = new ArrayList<>();
@@ -47,7 +47,25 @@ public class User {
         this.password = password;
     }
 
-    public User(Integer userId, String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, byte[] userProfileImage, List<Posts> userPostList) {
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage) {
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+        this.userProfileDescription = userProfileDescription;
+        this.userProfileImage = userProfileImage;
+    }
+
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail) {
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+    }
+
+    public User(Integer userId, String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage, List<Posts> userPostList) {
         this.userId = userId;
         this.username = username;
         this.password = password;
@@ -115,11 +133,11 @@ public class User {
         this.userProfileDescription = userProfileDescription;
     }
 
-    public byte[] getUserProfileImage() {
+    public String getUserProfileImage() {
         return userProfileImage;
     }
 
-    public void setUserProfileImage(byte[] userProfileImage) {
+    public void setUserProfileImage(String userProfileImage) {
         this.userProfileImage = userProfileImage;
     }
 
@@ -133,7 +151,7 @@ public class User {
                 ", userLastName='" + userLastName + '\'' +
                 ", userEmail='" + userEmail + '\'' +
                 ", userProfileDescription='" + userProfileDescription + '\'' +
-                ", userProfileImage=" + Arrays.toString(userProfileImage) +
+                ", userProfileImage=" + userProfileImage +
                 ", userPostList=" + userPostList +
                 '}';
     }
