@@ -1,10 +1,16 @@
 package com.energy.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="posts")
 public class Posts {
@@ -27,25 +33,4 @@ public class Posts {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
 
-    public Posts() {
-    }
-
-    public Posts(Integer postId, Date postCreatedDate, String postMessage, Integer userIdFk, User user) {
-        this.postId = postId;
-        this.postCreatedDate = postCreatedDate;
-        this.postMessage = postMessage;
-        this.userIdFk = userIdFk;
-        this.user = user;
-    }
-
-    @Override
-    public String toString() {
-        return "Posts{" +
-                "postId=" + postId +
-                ", postCreatedDate=" + postCreatedDate +
-                ", postMessage='" + postMessage + '\'' +
-                ", userIdFk=" + userIdFk +
-                ", user=" + user +
-                '}';
-    }
 }

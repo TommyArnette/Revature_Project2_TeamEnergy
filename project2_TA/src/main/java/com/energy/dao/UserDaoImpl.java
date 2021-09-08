@@ -1,86 +1,52 @@
 package com.energy.dao;
 
 import com.energy.models.User;
-import com.energy.util.HibernateUtil;
-import org.hibernate.Hibernate;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
-import java.io.Serializable;
+
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Repository("userDao")
+@Transactional
 public class UserDaoImpl implements UserDao {
-    /*
-    static UserDao userDao;
+    private SessionFactory sessionFactory;
 
-    public static UserDao getInstance(){
-        if(userDao == null){
-            userDao = new UserDaoImpl();
-        }
-        return userDao;
+    @Autowired
+    public UserDaoImpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
     }
-    */
-
 
     @Override
     public void addNewUser(User user) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
-
-        session.save(user);
-
-        tx.commit();
-        session.close();
+        this.sessionFactory.getCurrentSession().save(user);
     }
 
     @Override
     public void updateUserInfo(User user) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
-
-        session.update(user);
-
-        tx.commit();
-        session.close();
+        this.sessionFactory.getCurrentSession().update(user);
     }
 
     @Override
     public User selectUserById(Integer userId) {
-        Session session = HibernateUtil.getSession();
-
-        User user = session.get(User.class, userId);
-
-        session.close();
-
-        return user;
+        return sessionFactory.getCurrentSession().get(User.class, userId);
     }
 
     @Override
     public User selectUserByName(String username) {
-        Session session = HibernateUtil.getSession();
-        return session.createQuery("from User where username = '" + username + "'", User.class).getSingleResult();
+        return sessionFactory.getCurrentSession().createQuery("from User where username = '" + username + "'", User.class).getSingleResult();
     }
 
-    /* Just added this method 9/4 10:30 PM. This is similar to JDBC ? parameter (:username & :password) */
     @Override
     public User getUser(User user) {
-        Session session = HibernateUtil.getSession();
-
-        TypedQuery query = session.createQuery("from User where username = :username AND password = :password", User.class);
-        query.setParameter(0, user.getUsername());
-        query.setParameter(1, user.getPassword());
-
-        User currentUser = (User) query.getSingleResult();
-
-        return currentUser;
+        return null; // NOT COMPLETE
     }
 
     @Override
     public List<User> selectAllUsers() {
-        Session session = HibernateUtil.getSession();
-        return session.createQuery("from User", User.class).list();
+        return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
     }
 
 }

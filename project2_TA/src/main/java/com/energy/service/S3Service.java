@@ -27,5 +27,4 @@ public class S3Service {
     public void uploadFile(File file, String path){
         s3Client.putObject(bucketName, path + file.getName(), file);
     }
-
 }
