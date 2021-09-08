@@ -1,13 +1,19 @@
 package com.energy.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
 @Table(name="users")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -37,115 +43,5 @@ public class User {
     private String userProfileImage;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Posts> userPostList = new ArrayList<>();
-
-    public User() {
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
-
-    public User(String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage) {
-        this.username = username;
-        this.password = password;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
-        this.userProfileDescription = userProfileDescription;
-        this.userProfileImage = userProfileImage;
-    }
-
-    public User(Integer userId, String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage, List<Posts> userPostList) {
-        this.userId = userId;
-        this.username = username;
-        this.password = password;
-        this.userFirstName = userFirstName;
-        this.userLastName = userLastName;
-        this.userEmail = userEmail;
-        this.userProfileDescription = userProfileDescription;
-        this.userProfileImage = userProfileImage;
-        this.userPostList = userPostList;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUserFirstName() {
-        return userFirstName;
-    }
-
-    public void setUserFirstName(String userFirstName) {
-        this.userFirstName = userFirstName;
-    }
-
-    public String getUserLastName() {
-        return userLastName;
-    }
-
-    public void setUserLastName(String userLastName) {
-        this.userLastName = userLastName;
-    }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getUserProfileDescription() {
-        return userProfileDescription;
-    }
-
-    public void setUserProfileDescription(String userProfileDescription) {
-        this.userProfileDescription = userProfileDescription;
-    }
-
-    public String getUserProfileImage() {
-        return userProfileImage;
-    }
-
-    public void setUserProfileImage(String userProfileImage) {
-        this.userProfileImage = userProfileImage;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", userFirstName='" + userFirstName + '\'' +
-                ", userLastName='" + userLastName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userProfileDescription='" + userProfileDescription + '\'' +
-                ", userProfileImage=" + userProfileImage +
-                ", userPostList=" + userPostList +
-                '}';
-    }
+    private List<Post> userPostList = new ArrayList<>();
 }

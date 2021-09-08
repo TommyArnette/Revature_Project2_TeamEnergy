@@ -5,10 +5,125 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06e4f64-90a8-480a-a7df-fffb9e70c0ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3ab893fd9f96cc6074c2af902f601094be7b384" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/Like.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/PostImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/PostsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/assets/.gitkeep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/util/HibernateUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/.browserslistrc" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/.browserslistrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/karma.conf.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/karma.conf.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/dashboard/dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/dashboard/dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/dashboard/dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/dashboard/dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/landing/landing.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/landing/landing.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/landing/landing.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/landing/landing.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/login/login.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/app/pages/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/assets/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/polyfills.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/polyfills.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/src/test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/test.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/tsconfig.app.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/p2Frontend/tsconfig.spec.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.spec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/Posts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/service/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/util/HibernateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/dashboard/dashboard.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/dashboard/dashboard.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/dashboard/dashboard.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/dashboard/dashboard.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/landing/landing.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/landing/landing.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/landing/landing.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/landing/landing.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/app/pages/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/p2Frontend/tsconfig.spec.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +146,47 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\53402\OneDrive\Documents\MiloCao\Reverature\Revature_Project2_TeamEnergy\project2_TA\src\main\java" />
+      <recent name="C:\Users\53402\OneDrive\Documents\MiloCao\Reverature\Revature_Project2_TeamEnergy\project2_TA\src\main\java\com\energy\util" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Smart Tomcat.Unnamed">
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="project2_TA" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="com.poratu.idea.plugins.tomcat" factoryName="SMART_TOMCAT_FACTORY" nameIsGenerated="true">
+      <option name="adminPort" value="9005" />
+      <option name="contextPath" value="" />
+      <option name="docBase" value="C:\Users\53402\OneDrive\Documents\MiloCao\Reverature\Revature_Project2_TeamEnergy\project2_TA\src\main\webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="passParentEnvironmentVariables" value="true" />
+      <option name="port" value="9000" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.52" />
+          <option name="number" value="0" />
+          <option name="path" value="C:\Program Files\Apache Software Foundation\Tomcat 9.0" />
+          <option name="version" value="9.0.52.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,6 +211,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.main" />
+      <item itemvalue="Smart Tomcat.Unnamed" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.main" />

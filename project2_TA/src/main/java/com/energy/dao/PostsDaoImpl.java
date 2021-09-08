@@ -1,33 +1,36 @@
 package com.energy.dao;
 
-import com.energy.models.Posts;
-import com.energy.util.HibernateUtil;
-import org.hibernate.Hibernate;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import com.energy.models.Post;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+
+@Repository("postDao")
+@Transactional
 public class PostsDaoImpl implements PostsDao{
-    @Override
-    public void addNewPost(Posts posts) {
-        Session session = HibernateUtil.getSession();
-        Transaction tx = session.beginTransaction();
+    private SessionFactory sessionFactory;
 
-        session.save(posts);
-
-        tx.commit();
+    @Autowired
+    public PostsDaoImpl(SessionFactory sessionFactory){
+        this.sessionFactory = sessionFactory;
     }
 
     @Override
-    public List<Posts> userPostList(Integer userIdFk) {
-        Session session = HibernateUtil.getSession();
-        return session.createQuery("from Posts where userIdFk = '" + userIdFk + "'", Posts.class).list();
+    public void addNewPost(Post post) {
+        this.sessionFactory.getCurrentSession().save(post);
     }
 
     @Override
-    public List<Posts> selectAllPosts() {
-       Session session = HibernateUtil.getSession();
-       return session.createQuery("from Posts", Posts.class).list();
+    public List<Post> getUserPostList(Integer userIdFk) {
+        return this.sessionFactory.getCurrentSession().createQuery("from Posts where userIdFk = '" + userIdFk + "'", Post.class).list();
+    }
+
+    @Override
+    public List<Post> selectAllPosts() {
+       return this.sessionFactory.getCurrentSession().createQuery("from Posts", Post.class).list();
     }
 }

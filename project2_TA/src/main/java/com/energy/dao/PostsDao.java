@@ -1,12 +1,11 @@
 package com.energy.dao;
 
-import com.energy.models.Posts;
+import com.energy.models.Post;
 
 import java.util.List;
 
 public interface PostsDao {
-    public void addNewPost(Posts posts);
-
-    List<Posts> userPostList(Integer userIdFk);
-    List<Posts> selectAllPosts();
+    void addNewPost(Post post);
+    List<Post> getUserPostList(Integer userIdFk);
+    List<Post> selectAllPosts();
 }
