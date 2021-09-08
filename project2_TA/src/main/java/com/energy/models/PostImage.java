@@ -19,7 +19,7 @@ public class PostImage {
     private Integer postImageId;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Posts posts;
+    private Post post;
 
     @Column(name="post_image_url")
     private String postImageUrl;

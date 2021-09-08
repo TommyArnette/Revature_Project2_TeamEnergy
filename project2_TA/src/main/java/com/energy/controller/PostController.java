@@ -1,4 +1,5 @@
 package com.energy.controller;
 
-public class PostsController {
+public class PostController {
+
 }

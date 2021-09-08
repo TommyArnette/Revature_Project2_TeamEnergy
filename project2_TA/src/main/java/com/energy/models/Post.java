@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name="posts")
-public class Posts {
+public class Post {
 
     @Id
     @Column(name="post_id")

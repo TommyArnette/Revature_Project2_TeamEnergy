@@ -21,5 +21,5 @@ public class Like {
     private User user;
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Posts posts;
+    private Post post;
 }

@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Data
@@ -44,7 +43,7 @@ public class User {
     private String userProfileImage;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Posts> userPostList = new ArrayList<>();
+    private List<Post> userPostList = new ArrayList<>();
 
 
     public User(String username, String password) {
