@@ -1,0 +1,14 @@
+.btn {
+    font-weight: 600;
+    font-size: 17px;
+    width: 197px;
+    height: 48px;
+}
+
+input {
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 17px;
+    margin: 6px 0;
+}

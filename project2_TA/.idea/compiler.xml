@@ -2,13 +2,24 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+<<<<<<< HEAD
       <profile default="true" name="Default" enabled="true" />
+=======
+>>>>>>> michael_archer
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="project2_TA" />
       </profile>
     </annotationProcessing>
+=======
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="project2_TA" target="8" />
+    </bytecodeTargetLevel>
+>>>>>>> michael_archer
   </component>
 </project>
