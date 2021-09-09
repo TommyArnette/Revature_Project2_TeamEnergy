@@ -1,18 +1,23 @@
 <div class="modal-header">
-    <h4 class="modal-title">Hi there!</h4>
-    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div>
+    <h4 class="modal-title">Sign Up</h4>
+    <p>It's quick and easy.</p>
   </div>
-  <div class="modal-body">
-    <div>
-        <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
-        <input type="text" name="password" placeholder="Password" [(ngModel)]="password">
-        <input type="text" name="firstName" placeholder="First Name" [(ngModel)]="firstName">
-        <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="lastName">
-        <input type="text" name="email" placeholder="Email" [(ngModel)]="email">
-    </div>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="register">
+      <div>
+        <input type="text" name="firstName" placeholder="First name" [(ngModel)]="firstName">
+        <input type="text" name="lastName" placeholder="Last name" [(ngModel)]="lastName">
+      </div>
+      <input type="text" name="username" placeholder="Username" [(ngModel)]="username">
+      <input type="text" name="password" placeholder="Password" [(ngModel)]="password">
+      <input type="text" name="email" placeholder="Email" [(ngModel)]="email">
   </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="activeModal.close('Close click')">Sign Up</button>
+</div>

@@ -15,6 +15,6 @@ export class RegisterModalComponent implements OnInit {
   }
 
   open(): void {
-    this.modalService.open(RegisterComponent);
+    this.modalService.open(RegisterComponent, { centered: true, size: 'sm' });
   }
 }
