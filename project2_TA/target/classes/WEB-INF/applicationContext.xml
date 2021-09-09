@@ -16,12 +16,16 @@
 
     <tx:annotation-driven/>
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.embedded.H2EmbeddedDatabaseConfigurer">
+    <!-- H2 DATABASE -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- embedded.H2EmbeddedDatabaseConfigurer -->
         <property name="driverClassName" value="org.h2.Driver"/>
         <property name="url" value="jdbc:h2:C:\\Users\\53402\\OneDrive\\Desktop\\h2db"/>
         <property name="username" value="sa"/>
         <property name="password" value="sa"/>
     </bean>
+
+
 
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

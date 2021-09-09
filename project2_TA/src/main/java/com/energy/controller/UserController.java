@@ -10,7 +10,7 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 @RestController("userController")
-@CrossOrigin(value = "http://localhost:9000", allowCredentials = "true")
+@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class UserController {
     private UserService userService;
 
