@@ -2,9 +2,11 @@ package com.energy.service;
 
 import com.energy.dao.PostDao;
 import com.energy.models.Post;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("postService")
 public class PostService {
     PostDao postDao;
 
