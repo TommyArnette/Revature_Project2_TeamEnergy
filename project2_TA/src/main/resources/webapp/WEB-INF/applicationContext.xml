@@ -36,9 +36,10 @@
     -->
 
     <!-- H2 DATABASE -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.embedded.H2EmbeddedDatabaseConfigurer">
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!-- embedded.H2EmbeddedDatabaseConfigurer -->
         <property name="driverClassName" value="org.h2.Driver"/>
-        <property name="url" value="jdbc:h2:C:\Users\AYarn\Desktop\h2db"/>
+        <property name="url" value="jdbc:h2:C:\\Users\\AYarn\\Desktop\\h2db"/>
         <property name="username" value="sa"/>
         <property name="password" value="sa"/>
     </bean>
@@ -52,7 +53,7 @@
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop> <!--Will change to JDBC later-->
                 <prop key="hibernate.show_sql">true</prop>
                 <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop> <!-- to start, then validate-->
+                <prop key="hibernate.hbm2ddl.auto">validate</prop> <!-- to start, then validate-->
             </props>
         </property>
     </bean>

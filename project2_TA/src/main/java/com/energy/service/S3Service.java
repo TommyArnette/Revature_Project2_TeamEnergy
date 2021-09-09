@@ -6,8 +6,10 @@ import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.energy.util.S3Util;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
+
 
 public class S3Service {
     // create an S3Util.java in the util package with public static variables for the variables below. See discord for the values

@@ -7,19 +7,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
-    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+    private static ApplicationContext applicationContext = new ClassPathXmlApplicationContext("/webapp/WEB-INF/applicationContext.xml");
     private static UserService userService;
 
     public static void main(String[] args) {
-        User user1 = new User("testUser", "password", "john", "smith", "johnsmith@gmail.com",
+        userService = applicationContext.getBean("userService", UserService.class);
+        /*User user1 = new User("testUser", "password", "john", "smith", "johnsmith@gmail.com",
                 "test user", null);
 
-        userService.registerNewUser(user1);
+        userService.registerNewUser(user1);*/
 
         System.out.println(userService.selectAllUsers());
     }
-
-
-
-
 }
