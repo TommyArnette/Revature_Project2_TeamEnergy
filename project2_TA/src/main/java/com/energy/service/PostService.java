@@ -2,6 +2,7 @@ package com.energy.service;
 
 import com.energy.dao.PostDao;
 import com.energy.models.Post;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class PostService {
     PostDao postDao;
 
+    @Autowired
     public PostService(PostDao postDao){
         this.postDao = postDao;
     }

@@ -2,6 +2,7 @@ package com.energy.service;
 
 import com.energy.dao.UserDao;
 import com.energy.models.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 public class UserService {
     UserDao userDao;
 
+    @Autowired
     public UserService(UserDao userDao){
         this.userDao = userDao;
     }
