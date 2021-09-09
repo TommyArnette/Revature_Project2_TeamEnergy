@@ -1,12 +1,16 @@
 package com.energy.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="posts")
 public class Post {
@@ -23,12 +27,10 @@ public class Post {
     @Column(name="post_message")
     private String postMessage;
 
+    @Column(name="user_id_fk")
+    private Integer userIdFk;
+
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
 
-    @OneToMany(mappedBy = "post")
-    private List<Like> likes = new ArrayList<>();
-
-    @OneToMany(mappedBy = "post")
-    private List<PostImage> images = new ArrayList<>();
 }
