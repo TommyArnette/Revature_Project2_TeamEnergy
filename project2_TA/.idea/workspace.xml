@@ -63,9 +63,7 @@
       <option name="adminPort" value="9005" />
       <option name="contextPath" value="" />
       <option name="docBase" value="C:\Users\53402\OneDrive\Documents\MiloCao\Reverature\Revature_Project2_TeamEnergy\project2_TA\src\main\webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
+      <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="9000" />
       <option name="tomcatInfo">

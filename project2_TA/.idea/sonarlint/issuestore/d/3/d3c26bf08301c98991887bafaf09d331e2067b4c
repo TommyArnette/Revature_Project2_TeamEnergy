@@ -1,0 +1,19 @@
+
+X	java:S125"<This block of commented-out lines of code should be removed.(ƒóÚÜ8¹”­¹¼/
+X	java:S125"<This block of commented-out lines of code should be removed.(˜—Òé8º”­¹¼/
+]	java:S125"<This block of commented-out lines of code should be removed.(»•Šîøÿÿÿÿ8×©Æº¼/
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(“¬…Øşÿÿÿÿ8ÄŞÅº¼/
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(’Ã÷Éÿÿÿÿÿ8Ø©Æº¼/
+v
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(šò—ÿÿÿÿÿ8ÄŞÅº¼/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(¢ˆÃ÷8Ø©Æº¼/
+q
+java:S1128"TRemove this unnecessary import: same package classes are always implicitly imported.(á×¤ï8Ø©Æº¼/
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡
+0
+java:S1220""Move this file to a named package.
+b
+java:S1223	"LRename this method to prevent any misunderstanding or make it a constructor.(Çµí‘
