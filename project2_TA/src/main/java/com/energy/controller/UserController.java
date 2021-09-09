@@ -7,6 +7,7 @@ import com.energy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 @RestController("userController")
@@ -26,10 +27,16 @@ public class UserController {
     }
 
     @PostMapping("user")
-    public JsonResponse createUser(@RequestBody User user){
+    public JsonResponse createUser(@RequestBody User user) throws MessagingException {
         this.userService.registerNewUser(user);
 
         return new JsonResponse(true, "User has been registered.", user);
+    }
+
+    @PostMapping("update")
+    public JsonResponse updateUser(@RequestBody User user) throws MessagingException{
+        this.userService.updateUserInfo(user);
+        return new JsonResponse(true, "User profile has been updated.", null);
     }
 
     @GetMapping("user/{userId}")

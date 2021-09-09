@@ -49,4 +49,9 @@ public class UserDaoImpl implements UserDao {
         return sessionFactory.getCurrentSession().createQuery("from User", User.class).list();
     }
 
+    @Override
+    public List<User> selectAllOtherUsers(User user) {
+        return this.sessionFactory.getCurrentSession().createQuery("from User where userId != " + user.getUserId(), User.class).list();
+    }
+
 }
