@@ -1,13 +1,19 @@
 package com.energy.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="posts")
-public class Posts {
+public class Post {
 
     @Id
     @Column(name="post_id")
@@ -26,4 +32,5 @@ public class Posts {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private User user;
+
 }
