@@ -6,6 +6,8 @@ import com.revature.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController("postController")
 @RequestMapping(value="api")
 public class PostController {
