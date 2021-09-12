@@ -22,12 +22,13 @@ public class UserController {
     }
 
     @PostMapping("user")
-    public JsonResponse registerNewUser(@RequestBody User user) throws MessagingException {
+    public JsonResponse registerNewUser(HttpSession session, @RequestBody User user) throws MessagingException {
         JsonResponse jsonResponse;
         User tempU = this.userService.registerNewUser(user);
         if(tempU==null){
             jsonResponse =new JsonResponse(false,"username already exist", null);
         }else{
+            session.setAttribute("loggedInUser",tempU);
             jsonResponse= new JsonResponse(true,"user created",user);
         }
         return jsonResponse;
