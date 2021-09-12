@@ -29,6 +29,7 @@ public class Post {
     @Column(name="user_id_fk")
     private Integer userIdFk;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    //cascade = CascadeType.ALL,
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 }

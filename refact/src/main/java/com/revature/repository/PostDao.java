@@ -13,4 +13,5 @@ import java.util.Optional;
 @Repository("postDao")
 @Transactional
 public interface PostDao extends JpaRepository<Post, Integer> {
+    Optional<Post> findPostByUserIdFk(Integer userIdFk);
 }

@@ -29,19 +29,28 @@ public class PostController {
     public JsonResponse createNewPost(HttpSession session, @RequestBody Post post){
         JsonResponse jsonResponse;
 
-        Post newPost = this.postService.createNewPost(post);
+        User user = (User) session.getAttribute("loggedInUser");
 
-        if(newPost != null){
-            jsonResponse = new JsonResponse(true, "Post created.", newPost);
+        if(user != null){
+            post.setUserIdFk(user.getUserId());
+            post.setUser(user);
+
+            Post newPost = this.postService.createNewPost(post);
+            if(newPost != null){
+                jsonResponse = new JsonResponse(true, "Post created.", newPost);
+            }else{
+                jsonResponse = new JsonResponse(false, "No post created.", null);
+            }
         }
         else{
-            jsonResponse = new JsonResponse(false, "No post created.", null);
+            return jsonResponse = new JsonResponse(false, "You need to be logged in.", null);
         }
-        return jsonResponse;
+
+        return  jsonResponse;
     }
 
     @GetMapping("posts/{userIdFk}")
     public JsonResponse getPostsByUserId(@PathVariable Integer userIdFk){
-        return new JsonResponse(true, "User " + userIdFk + " posts obtained.", this.postService.selectAllPosts());
+        return new JsonResponse(true, "User " + userIdFk + " posts obtained.", this.postService.selectPostByUserId(userIdFk));
     }
 }

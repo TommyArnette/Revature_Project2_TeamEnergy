@@ -40,8 +40,8 @@ public class User {
     @Column(name="user_profile_image")
     private String userProfileImage;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Post> userPostList = new ArrayList<>();
+    /*@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    private List<Post> userPostList = new ArrayList<>();*/
 
     public User(String username, String password) {
         this.username = username;
