@@ -53,7 +53,7 @@ public class UserController {
         }
         return jsonResponse;
     }
-    @GetMapping("user/UN/{username}")
+    @GetMapping("user/username/{username}")
     public JsonResponse selectUserByUsername(@PathVariable String username){
         JsonResponse jsonResponse;
         User user = this.userService.selectUserByUsername(username);
@@ -69,13 +69,13 @@ public class UserController {
     public JsonResponse login(HttpSession session, @RequestBody User user) {
         JsonResponse jsonResponse;
 
-        User tuser = this.userService.login(user);
+        User tUser = this.userService.login(user);
 
-        if (tuser == null) {
+        if (tUser == null) {
             jsonResponse = new JsonResponse(false,"data incorrect",null);
         }else{
-            jsonResponse= new JsonResponse(true, "loggin and session created",tuser);
-            session.setAttribute("loggedInUser",tuser);
+            jsonResponse= new JsonResponse(true, "login and session created",tUser);
+            session.setAttribute("loggedInUser",tUser);
         }
 
         return jsonResponse;
