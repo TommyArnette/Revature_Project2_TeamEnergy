@@ -22,7 +22,7 @@ public class PostService {
 
     public List<Post> selectAllPosts(){return this.postDao.findAll();}
 
-    public Post selectPostByUserId(Integer userIdFk){return this.postDao.findById(userIdFk).orElse(null);}
+    public Post selectPostByUserId(Integer userIdFk){return this.postDao.findPostByUserIdFk(userIdFk).orElse(null);}
 
     public Post createNewPost(Post post){
         return this.postDao.save(post);

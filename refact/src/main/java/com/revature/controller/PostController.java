@@ -51,6 +51,10 @@ public class PostController {
 
     @GetMapping("posts/{userIdFk}")
     public JsonResponse getPostsByUserId(@PathVariable Integer userIdFk){
-        return new JsonResponse(true, "User " + userIdFk + " posts obtained.", this.postService.selectPostByUserId(userIdFk));
+        if(userIdFk != null){
+            return new JsonResponse(true, "User " + userIdFk + " posts obtained.", this.postService.selectPostByUserId(userIdFk));
+        }else{
+            return new JsonResponse(false, "User ID " + userIdFk + " does not exist.", null);
+        }
     }
 }
