@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="284317a6-1cee-44cd-a014-b1b872f76e6c" name="Default Changelist" comment="" />
+    <list default="true" id="284317a6-1cee-44cd-a014-b1b872f76e6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../refact/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../refact/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../refact/src/main/java/com/revature/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../refact/src/main/java/com/revature/models/Post.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,9 +61,7 @@
       <option name="adminPort" value="8005" />
       <option name="contextPath" value="/project2_TA" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
-      <option name="envOptions">
-        <map />
-      </option>
+      <option name="envOptions" />
       <option name="passParentEnvironmentVariables" value="true" />
       <option name="port" value="8080" />
       <option name="tomcatInfo">
@@ -97,8 +98,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Smart Tomcat.Unnamed" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Smart Tomcat.Unnamed" />
     </list>
     <recent_temporary>
       <list>
