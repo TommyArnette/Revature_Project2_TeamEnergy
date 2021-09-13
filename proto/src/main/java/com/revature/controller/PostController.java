@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController("postController")
 @RequestMapping(value="api")
+@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class PostController {
     private PostService postService;
 

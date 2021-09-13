@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController("userController")
 @RequestMapping(value="api")
+@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class UserController {
     private UserService userService;
     @Autowired
@@ -82,7 +83,7 @@ public class UserController {
         return jsonResponse;
     }
 
-    @GetMapping("logout")
+    @PostMapping("logout")
     public JsonResponse logout(HttpSession session){
         session.setAttribute("loggedInUser",null);
         return new JsonResponse(true,"Session terminated.",null);

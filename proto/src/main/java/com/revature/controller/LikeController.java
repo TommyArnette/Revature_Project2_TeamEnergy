@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 
 @RestController("likeController")
 @RequestMapping(value="api")
+@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class LikeController {
     private LikeService likeService;
 
@@ -34,7 +35,7 @@ public class LikeController {
             if(newLike != null){
                 jsonResponse = new JsonResponse(true, "Like created.", likes);
             }else{
-                jsonResponse = new JsonResponse(false, "No post created.", null);
+                jsonResponse = new JsonResponse(false, "No like created.", null);
             }
         }
         else{
@@ -43,10 +44,4 @@ public class LikeController {
 
         return  jsonResponse;
     }
-    @GetMapping("likes/all")
-    public JsonResponse getAllLikes(){
-        return new JsonResponse(true,"got all likes",this.likeService.getAlllike());
-    }
-
-
 }
