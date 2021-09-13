@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06e4f64-90a8-480a-a7df-fffb9e70c0ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/PostImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/PostImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/S3Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/util/S3Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/util/S3Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/controller/PostController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/models/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/PostImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/models/PostImage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/service/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/S3Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/service/S3Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/util/S3Util.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/util/S3Util.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
