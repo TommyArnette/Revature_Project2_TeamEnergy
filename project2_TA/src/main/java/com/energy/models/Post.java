@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -33,5 +34,8 @@ public class Post {
 //    cascade = CascadeType.ALL
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "post_fk")
+    private List<PostImage> postImageList;
 
 }

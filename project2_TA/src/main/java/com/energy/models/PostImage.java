@@ -18,9 +18,12 @@ public class PostImage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postImageId;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Post post;
-
     @Column(name="post_image_url")
     private String postImageUrl;
+
+    @Column(name="post_image_name")
+    private String postImageName;
+
+    @Column(name="post_fk")
+    private Integer post_fk;
 }

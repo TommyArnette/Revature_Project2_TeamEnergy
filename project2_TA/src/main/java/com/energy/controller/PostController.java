@@ -8,6 +8,7 @@ import com.energy.service.PostService;
 import com.energy.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.io.File;
@@ -17,6 +18,8 @@ import java.util.List;
 @RequestMapping(value="api")
 public class PostController {
     private PostService postService;
+
+    @Autowired
     private S3Service s3Service;
 
     @Autowired
@@ -56,23 +59,17 @@ public class PostController {
         return new JsonResponse(true, "User " + userIdFk + " posts obtained.", this.postService.selectPostsByUserId(userIdFk));
     }
 
-    @PostMapping("postsImage/{postID}")
-    public JsonResponse createNewPostImage(@PathVariable Integer postID, @RequestBody PostImage postImage){
-        JsonResponse jsonResponse;
-        Post post = this.postService.getPostByID(postID);
 
-        if(post != null){
-            postImage.setPost(post);
-            PostImage newPostImage = this.postService.createNewPostImage(postImage);
-            if( newPostImage != null){
-                jsonResponse = new JsonResponse(true,"postImage created",newPostImage);
-            }else{
-                jsonResponse = new JsonResponse(false, "No postImage created",null);
-            }
-        }else {
-            return new JsonResponse(false, "No post select",null);
-        }
-        return jsonResponse;
+    @PostMapping("postImage")
+    public JsonResponse createNewPostImage(@RequestBody PostImage postImage){
+        String url = this.s3Service.getURL(postImage.getPostImageName());
+        PostImage pi = this.postService.createNewPostImage(url,postImage);
+        return new JsonResponse(true,"postImage created",pi);
+    }
+
+    @GetMapping("postImage")
+    public JsonResponse getALLPostImage(){
+        return new JsonResponse(true, "All posts obtained.", this.postService.getAllPostImages());
     }
 
 

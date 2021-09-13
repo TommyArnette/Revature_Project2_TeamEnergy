@@ -13,7 +13,11 @@ import java.util.List;
 
 @Service("postService")
 public class PostService {
+
+    @Autowired
     private PostDao postDao;
+
+    @Autowired
     private PostImageDao postImageDao;
 
     UserDao userDao;
@@ -37,8 +41,19 @@ public class PostService {
         return this.postDao.findById(id).orElse(null);
     }
 
-    public PostImage createNewPostImage(PostImage postImage){
-        return this.postImageDao.save(postImage);
+
+
+    public PostImage createNewPostImage(String url, PostImage postImage){
+        Post post = this.postDao.findById(postImage.getPost_fk()).orElse(null);
+        if(post != null){
+            postImage.setPostImageUrl(url);
+
+            return this.postImageDao.save(postImage);
+        }
+
+        return null;
     }
+
+    public List<PostImage> getAllPostImages(){return this.postImageDao.findAll();}
 
 }
