@@ -6,15 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="posts")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Post {
 
     @Id
@@ -22,19 +20,18 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
 
-    @Column(name="post_created_date", nullable = false)
+    @Column(name="post_created_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm a")
     private Date postCreatedDate;
 
     @Column(name="post_message")
     private String postMessage;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Column(name="user_id_fk")
+    private Integer userIdFk;
+
+//    cascade = CascadeType.ALL
+    @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
-    @OneToMany(mappedBy = "post")
-    private List<Like> likes = new ArrayList<>();
-
-    @OneToMany(mappedBy = "post")
-    private List<PostImage> images = new ArrayList<>();
 }

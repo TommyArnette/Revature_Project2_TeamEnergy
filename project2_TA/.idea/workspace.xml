@@ -5,15 +5,131 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a06e4f64-90a8-480a-a7df-fffb9e70c0ed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/controller/PostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/repository/PostDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/repository/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/9/09aee81b22ecf5cfecda5e431cbab2673b0529fc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/5/5/55a6028b2ad79722ba09951022919c9e1e15397b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/4/a41b8218f0544feeb1fb5261156bd7440e9c72c6" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/3/b3ab893fd9f96cc6074c2af902f601094be7b384" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/6/e6d1405e4293f763b1fc3e4a49383fea2198741e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/energy/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/dao/PostsDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/dao/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/JsonResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/JsonResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/Like.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/Like.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/PostImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/PostImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/PostsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/S3Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/S3Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/energy/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/energy/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/app/components/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/social-media-app/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/controller/PostController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/PostsDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/dao/UserDaoImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/JsonResponse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/Like.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/Post.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/PostImage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/models/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/PostService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/PostsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/S3Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/UserServiceImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/service/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/energy/util/S3Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/.browserslistrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/angular.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app-routing.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/app.module.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/login/login.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/login/login.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/login/login.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/login/login.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/register/register.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/register/register.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/register/register.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/app/components/register/register.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/environments/environment.prod.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/environments/environment.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/polyfills.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/src/test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/social-media-app/tsconfig.spec.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +167,20 @@
       <recent name="C:\Users\53402\OneDrive\Documents\MiloCao\Reverature\Revature_Project2_TeamEnergy\project2_TA\src\main\java\com\energy\util" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Unnamed">
+  <component name="RunManager" selected="Application.Application">
+    <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.energy.Application" />
+      <module name="project2_TA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.energy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main" />
       <module name="project2_TA" />
@@ -101,10 +230,12 @@
     </configuration>
     <list>
       <item itemvalue="Application.main" />
+      <item itemvalue="Application.Application" />
       <item itemvalue="Smart Tomcat.Unnamed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Application" />
         <item itemvalue="Application.main" />
       </list>
     </recent_temporary>

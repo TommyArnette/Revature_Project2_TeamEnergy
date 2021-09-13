@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="postImages")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class PostImage {
+
     @Id
     @Column(name="post_image_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,10 +23,4 @@ public class PostImage {
 
     @Column(name="post_image_url")
     private String postImageUrl;
-
-
-    public PostImage(Post post, String postImageUrl) {
-        this.post = post;
-        this.postImageUrl = postImageUrl;
-    }
 }

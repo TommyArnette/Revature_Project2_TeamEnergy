@@ -1,9 +1,4 @@
-import com.energy.dao.UserDao;
-import com.energy.dao.UserDaoImpl;
-import com.energy.models.Post;
 import com.energy.models.User;
-import com.energy.service.UserService;
-import com.energy.service.UserServiceImpl;
 
 public class main {
     public static void main(String[] args) {

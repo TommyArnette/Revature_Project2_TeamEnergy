@@ -6,11 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="likes")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Like {
     @Id
     @Column(name="like_id")
@@ -22,5 +22,4 @@ public class Like {
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Post post;
-
 }

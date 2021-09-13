@@ -1,5 +1,6 @@
 package com.energy.controller;
 
+
 import com.energy.models.JsonResponse;
 import com.energy.models.User;
 import com.energy.service.UserService;
@@ -10,76 +11,93 @@ import javax.mail.MessagingException;
 import javax.servlet.http.HttpSession;
 
 @RestController("userController")
-@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
+@RequestMapping(value="api")
 public class UserController {
     private UserService userService;
-
     @Autowired
-    public UserController(UserService userService){
-        this.userService = userService;
-    }
+    public UserController(UserService userService){this.userService = userService;}
 
     @GetMapping("user")
-    public JsonResponse getAllUsers(){
-        return new JsonResponse(true,"Displaying all users",this.userService.selectAll());
+    public JsonResponse selectAllUsers(){
+        return new JsonResponse(true,"Obtained all users",this.userService.selectAllUsers());
     }
 
     @PostMapping("user")
-    public JsonResponse createUser(@RequestBody User user) throws MessagingException {
-        this.userService.registerNewUser(user);
-        return new JsonResponse(true,"user has been created",null);
-    }
-
-    @PostMapping("update")
-    public JsonResponse updateUser(@RequestBody User user) throws MessagingException {
-        this.userService.updateUserInfo(user);
-        return new JsonResponse(true,"user has been update",null);
-    }
-
-    @GetMapping("user/{id}")
-    public JsonResponse getById(@PathVariable Integer id){
-
+    public JsonResponse registerNewUser(@RequestBody User user) throws MessagingException {
         JsonResponse jsonResponse;
-        User user = this.userService.selectUserById(id);
+        User tempU = this.userService.registerNewUser(user);
+        if(tempU==null){
+            jsonResponse =new JsonResponse(false,"username already exist", null);
+        }else{
+            jsonResponse= new JsonResponse(true,"user created",user);
+        }
+        return jsonResponse;
+    }
+
+    //@PatchMapping("user/UD")
+    // public JsonResponse updateUserInfo(@RequestBody User user){
+
+    // JsonResponse jsonResponse;
+    //User tempU = this.userService.updateUserInfo(user);
+    // return new JsonResponse(true,"user updated",tempU);
+    // }
+
+
+    @GetMapping("user/{userId}")
+    public JsonResponse selectUserById(@PathVariable Integer userId){
+        JsonResponse jsonResponse;
+        User user = this.userService.selectUserById(userId);
         if(user != null){
             jsonResponse = new JsonResponse(true,"user found",user);
         }else{
-            jsonResponse = new JsonResponse(false,"user with id " + id + " does not exist",null);
+            jsonResponse = new JsonResponse(false,"user not found",null);
         }
-
+        return jsonResponse;
+    }
+    @GetMapping("user/UN/{username}")
+    public JsonResponse selectUserByUsername(@PathVariable String username){
+        JsonResponse jsonResponse;
+        User user = this.userService.selectUserByUsername(username);
+        if(user != null){
+            jsonResponse = new JsonResponse(true,"user found",user);
+        }else{
+            jsonResponse = new JsonResponse(false,"user not found",null);
+        }
         return jsonResponse;
     }
 
-    @GetMapping("check-session")
-    public JsonResponse checkSession(HttpSession httpSession){
+    @PostMapping("login")
+    public JsonResponse login(HttpSession session, @RequestBody User users) {
         JsonResponse jsonResponse;
 
-        User user = (User) httpSession.getAttribute("loggedInUser");
+        User user = this.userService.login(users);
 
-        if(user != null){
-            jsonResponse = new JsonResponse(true, "Session found.", user);
+        if (user == null) {
+            jsonResponse = new JsonResponse(false,"data incorrect",null);
+        }else{
+            jsonResponse= new JsonResponse(true, "loggin and session created",user);
+            session.setAttribute("loggedInUser",user);
         }
-        else{
-            jsonResponse = new JsonResponse(false, "No session found.", null);
-        }
+
         return jsonResponse;
-    }
-
-    @GetMapping("login")
-    public JsonResponse login(HttpSession httpSession, @RequestBody User user){
-        httpSession.setAttribute("loggedInUser", user);
-
-        return new JsonResponse(true, "User logged in and session created.", user);
     }
 
     @GetMapping("logout")
-    public JsonResponse logout(HttpSession httpSession){
-        httpSession.setAttribute("loggedInUser", null);
-
-        return new JsonResponse(true, "Session terminated.", null);
+    public JsonResponse logout(HttpSession session){
+        session.setAttribute("loggedInUser",null);
+        return new JsonResponse(true,"session terminated",null);
     }
+
+    @GetMapping("check-session")
+    public JsonResponse checkSession(HttpSession session){
+        JsonResponse jsonResponse;
+        User user = (User) session.getAttribute("loggedInUser");
+        if(user !=null){
+            jsonResponse = new JsonResponse(true,"session found",user);
+        }else{
+            jsonResponse = new JsonResponse(false, "no session found",null);
+        }
+        return jsonResponse;
+    }
+
 }
-
-
-
-

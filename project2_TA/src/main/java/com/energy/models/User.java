@@ -9,11 +9,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="users")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
 
     @Id
@@ -42,6 +42,30 @@ public class User {
     @Column(name="user_profile_image")
     private String userProfileImage;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-    private List<Post> userPostList = new ArrayList<>();
+//    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+//    private List<Post> userPostList = new ArrayList<>();
+
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage) {
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+        this.userProfileDescription = userProfileDescription;
+        this.userProfileImage = userProfileImage;
+    }
+
+    public User(String username, String password, String userFirstName, String userLastName, String userEmail) {
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+    }
 }
