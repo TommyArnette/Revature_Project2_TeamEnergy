@@ -40,7 +40,18 @@ public class UserService {
     }
 
     public User updateUser(User user){
-        return this.userDao.save(user);
+        User u = this.userDao.findById(user.getUserId()).orElse(null);
+
+        if(u != null){
+            u.setUserFirstName(u.getUserFirstName());
+            u.setUserLastName(u.getUserLastName());
+            u.setUserEmail(u.getUserEmail());
+            u.setUserProfileDescription(u.getUserProfileImage());
+            u.setUserProfileImage(u.getUserProfileImage());
+            return this.userDao.save(u);
+        }
+
+        return null;
     }
 
     public User login(User user){
