@@ -39,7 +39,7 @@ public class UserController {
     public JsonResponse updateUser(@RequestBody User user){
         User u = this.userService.updateUser(user);
 
-        return new JsonResponse(true, "User information updated.", u);
+        return new JsonResponse(true, "User information updated.", user);
     }
 
 
