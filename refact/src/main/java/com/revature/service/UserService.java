@@ -50,7 +50,7 @@ public class UserService {
         User currentUser = userDao.getById(user.getUserId());
 
         if(currentUser != null){
-            this.userDao.updateUserFirstName(currentUser.getUserId(), user.getUserFirstName());
+            this.userDao.updateUserFirstName(user.getUserId(), user.getUserFirstName());
             this.userDao.save(currentUser);
         }
         return currentUser;
