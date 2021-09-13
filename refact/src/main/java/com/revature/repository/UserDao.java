@@ -19,4 +19,7 @@ public interface UserDao extends JpaRepository<User, Integer> {
   // @Modifying
   // @Query("update User where userId= :userid")
 
+    @Modifying
+    @Query("UPDATE User u SET u.userFirstName = :userFirstName WHERE u.userId= :userId")
+    void updateUserFirstName(@Param("userId") Integer userId, @Param("userFirstName") String userFirstName);
 }

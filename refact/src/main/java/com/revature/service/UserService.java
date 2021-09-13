@@ -46,6 +46,16 @@ public class UserService {
     //    return user;
   //  }
 
+    public User updateUserFirstName(User user){
+        User currentUser = userDao.getById(user.getUserId());
+
+        if(currentUser != null){
+            this.userDao.updateUserFirstName(currentUser.getUserId(), user.getUserFirstName());
+            this.userDao.save(currentUser);
+        }
+        return currentUser;
+    }
+
     public User login(User user){
 
         User currentUser = userDao.selectUserByName(user.getUsername());

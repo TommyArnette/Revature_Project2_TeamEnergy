@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value="api")
 public class UserController {
     private UserService userService;
+
     @Autowired
     public UserController(UserService userService){this.userService = userService;}
 
@@ -41,6 +42,24 @@ public class UserController {
         //User tempU = this.userService.updateUserInfo(user);
        // return new JsonResponse(true,"user updated",tempU);
    // }
+       @PatchMapping("user/update/{userId}")
+       public JsonResponse updateFirstName(HttpSession session, @PathVariable Integer userId, @RequestBody String userFirstName){
+           JsonResponse jsonResponse;
+           User currentUser = (User) session.getAttribute("loggedInUser");
+
+           currentUser = userService.selectUserById(userId);
+
+           if(currentUser != null){
+               //this.userService.updateUserFirstName(currentUser.getUserFirstName());
+               currentUser.setUserFirstName(userFirstName);
+               currentUser = this.userService.updateUserFirstName(currentUser);
+               jsonResponse = new JsonResponse(true, "User information updated.", currentUser);
+           }else{
+               jsonResponse = new JsonResponse(false, "Must be logged in.", null);
+           }
+
+           return jsonResponse;
+       }
 
 
     @GetMapping("user/{userId}")
