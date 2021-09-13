@@ -39,21 +39,8 @@ public class UserService {
         return null;
     }
 
-    //need to test update
-    //public User updateUserInfo(User user){
-
-   //     this.userDao.updateById(user.getUserId());
-    //    return user;
-  //  }
-
-    public User updateUserFirstName(User user){
-        User currentUser = userDao.getById(user.getUserId());
-
-        if(currentUser != null){
-            this.userDao.updateUserFirstName(user.getUserId(), user.getUserFirstName());
-            this.userDao.save(currentUser);
-        }
-        return currentUser;
+    public User updateUser(User user){
+        return this.userDao.save(user);
     }
 
     public User login(User user){
