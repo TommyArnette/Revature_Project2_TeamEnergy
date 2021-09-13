@@ -28,12 +28,8 @@ public class Likes {
 
     @Column(name="user_Id_like")
     private Integer userIdL;
-
-    //@Column(name="post_id_fk")
-   // private Integer postIdFk;
     //cascade = CascadeType.ALL,
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    Post post;
-
+    @Column(name="post_id_fk")
+    private Integer postIdFk;
 }

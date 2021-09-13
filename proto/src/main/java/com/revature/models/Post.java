@@ -31,12 +31,10 @@ public class Post {
     private Integer userIdFk;
 
     //cascade = CascadeType.ALL,
+    @JoinColumn(name = "user", referencedColumnName = "user_id")
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
-    //@ManyToOne(fetch = FetchType.EAGER)
-   // private Likes likes;
-
-   // @OneToMany(cascade = CascadeType.ALL,mappedBy = "post", fetch = FetchType.EAGER)
-    private List<Likes>likes;
+    @OneToMany(mappedBy = "postIdFk", cascade = CascadeType.ALL)
+    private List<Likes> likes;
 }
