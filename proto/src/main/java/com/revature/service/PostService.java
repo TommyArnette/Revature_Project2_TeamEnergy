@@ -31,14 +31,7 @@ public class PostService {
         return this.postDao.save(post);
     }
 
-    public PostImage createNewPostImage(String url, PostImage postImage){
-        Post post = this.postDao.findById(postImage.getPost_fk()).orElse(null);
-        if(post != null){
-            postImage.setPostImageUrl(url);
-
-            return this.postImageDao.save(postImage);
-        }
-
-        return null;
+    public PostImage createNewPostImage(PostImage postImage){
+        return this.postImageDao.save(postImage);
     }
 }

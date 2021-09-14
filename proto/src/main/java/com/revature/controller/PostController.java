@@ -34,7 +34,7 @@ public class PostController {
     public JsonResponse createNewPost(HttpSession session, @RequestBody Post post){
         JsonResponse jsonResponse;
 
-        User user = (User) session.getAttribute("loggedInUser");
+        User user = post.getUser();
 
         if(user != null){
             post.setUserIdFk(user.getUserId());
@@ -65,8 +65,7 @@ public class PostController {
 
     @PostMapping("postImage")
     public JsonResponse createNewPostImage(@RequestBody PostImage postImage){
-        String url = this.s3Service.getURL(postImage.getPostImageName());
-        PostImage pi = this.postService.createNewPostImage(url,postImage);
+        PostImage pi = this.postService.createNewPostImage(postImage);
         return new JsonResponse(true,"postImage created",pi);
     }
 }

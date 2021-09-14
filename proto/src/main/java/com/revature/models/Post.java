@@ -21,7 +21,6 @@ public class Post {
     private Integer postId;
 
     @Column(name="post_created_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", nullable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm a")
     private Date postCreatedDate;
 
     @Column(name="post_message")

@@ -1,8 +1,5 @@
 package com.revature.models;
 
-
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +10,6 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "likes")
-
 public class Likes {
     @Id
     @Column(name="like_id")
