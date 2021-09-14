@@ -40,6 +40,9 @@ public class User {
     @Column(name="user_profile_image")
     private String userProfileImage;
 
+    @Column(name = "reset_token")//add
+    private String resetToken;//add
+
    // @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
    // private List<Post> userPostList = new ArrayList<>();
 

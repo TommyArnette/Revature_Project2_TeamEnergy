@@ -100,4 +100,33 @@ public class UserController {
         return jsonResponse;
     }
 
+    @PostMapping("forgot")
+    public JsonResponse generateLink(@RequestBody User user) throws MessagingException {
+        JsonResponse jsonResponse;
+        User Nuser = this.userService.selectUserByEmail(user.getUserEmail());
+        if (Nuser == null) {
+            jsonResponse = new JsonResponse(false,"Email doesnt exist",null);
+        }else{
+            User sta =this.userService.generateLink(Nuser);
+
+            jsonResponse= new JsonResponse(true, "Link created and send",sta);
+        }
+        return jsonResponse;
+    }
+
+    @PostMapping("user/token/{resetToken}")
+    public JsonResponse createNewPass(@RequestBody User user, @PathVariable String resetToken){
+        JsonResponse jsonResponse;
+        User Nuser = this.userService.selectByToken(resetToken);
+
+        if (Nuser == null) {
+            jsonResponse = new JsonResponse(false,"token invalid",null);
+        }else{
+            Nuser.setPassword(user.getPassword());
+
+            jsonResponse= new JsonResponse(true, "Link created and send",this.userService.saveUserWithNewPassword(Nuser));
+        }
+        return jsonResponse;
+    }
+
 }

@@ -15,12 +15,10 @@ public interface UserDao extends JpaRepository<User, Integer> {
     @Query("from User where username= :username")
     User selectUserByName(@Param("username")String username);
 
+    @Query("from User where userEmail= :userEmail")
+    User findByEmail(@Param("userEmail") String userEmail);//add
 
-  // @Modifying
-  // @Query("update User where userId= :userid")
-
-    /*@Modifying
-    @Query("UPDATE User u SET u.userFirstName = :userFirstName WHERE u.userId= :userId")
-    void updateUserFirstName(@Param("userId") Integer userId, @Param("userFirstName") String userFirstName);*/
+    @Query("from User where resetToken= :resetToken")
+    User findByResetToken(@Param("resetToken")String resetToken);//add
 
 }

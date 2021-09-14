@@ -4,6 +4,8 @@ import com.revature.models.User;
 import com.revature.repository.UserDao;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -13,6 +15,7 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import java.util.List;
 import java.util.Properties;
+import java.util.UUID;
 
 @Service("userService")
 public class UserService {
@@ -26,6 +29,24 @@ public class UserService {
     public User selectUserById(Integer userId){return this.userDao.findById(userId).orElse(null);}
 
     public User selectUserByUsername(String username){return this.userDao.selectUserByName(username);}
+
+    public User selectUserByEmail(String userEmail){return  this.userDao.findByEmail(userEmail);}
+
+    public User generateLink(User user) throws MessagingException {
+        user.setResetToken(UUID.randomUUID().toString());
+        emailSenduserLink(user);
+        return this.userDao.save(user);
+    }
+
+    public User selectByToken(String resetToken){return this.userDao.findByResetToken(resetToken);}
+
+    public User saveUserWithNewPassword(User user){
+        User u = this.userDao.findById(user.getUserId()).orElse(null);
+        //u.setPassword(u.getPassword());
+        u.setPassword(new BasicPasswordEncryptor().encryptPassword(user.getPassword()));
+        u.setResetToken(null);
+        return this.userDao.save(u);
+    }
 
     public User registerNewUser(User user) throws javax.mail.MessagingException{
         User temp = selectUserByUsername(user.getUsername());
@@ -72,9 +93,6 @@ public class UserService {
         return null;
     }
 
-
-
-
     public void sendWelcomeEmail(User user) throws javax.mail.MessagingException {
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -107,5 +125,55 @@ public class UserService {
         message.setContent(multipart);
 
         Transport.send(message);
+    }
+
+
+    public void emailSenduserLink(User user){
+        //user email
+        String appUrl = "http://localhost:9000/api/user/token/%22+user.getResetToken()";
+        String to = user.getUserEmail();
+
+        // company email
+        String from = "ryan50534535@gmail.com";
+        final String username = "ryan50534535@gmail.com";//your gmail username
+        final String password = "rafasdasad";//your gmail password
+        //using gmail to send mail
+        String host = "smtp.gmail.com";
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
+
+        // get the session object
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+            // Create a default MimeMessage object
+            Message message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(to));
+
+            // set subject in the email sent
+            message.setSubject("Welcome to the The Reimbursement App");
+
+            // Put the content of your message
+            message.setText("Hello there your recover link is: "+appUrl);
+
+            // Send message
+            Transport.send(message);
+
+
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
