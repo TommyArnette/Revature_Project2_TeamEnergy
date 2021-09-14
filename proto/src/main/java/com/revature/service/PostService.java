@@ -1,8 +1,10 @@
 package com.revature.service;
 
 import com.revature.models.Post;
+import com.revature.models.PostImage;
 import com.revature.models.User;
 import com.revature.repository.PostDao;
+import com.revature.repository.PostImageDao;
 import com.revature.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +15,8 @@ import java.util.List;
 public class PostService {
     private PostDao postDao;
 
-    UserDao userDao;
+    @Autowired
+    private PostImageDao postImageDao;
 
     @Autowired
     public PostService(PostDao postDao){
@@ -26,5 +29,16 @@ public class PostService {
 
     public Post createNewPost(Post post){
         return this.postDao.save(post);
+    }
+
+    public PostImage createNewPostImage(String url, PostImage postImage){
+        Post post = this.postDao.findById(postImage.getPost_fk()).orElse(null);
+        if(post != null){
+            postImage.setPostImageUrl(url);
+
+            return this.postImageDao.save(postImage);
+        }
+
+        return null;
     }
 }

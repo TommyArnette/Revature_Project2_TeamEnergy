@@ -2,19 +2,23 @@ package com.revature.controller;
 
 import com.revature.models.JsonResponse;
 import com.revature.models.Post;
+import com.revature.models.PostImage;
 import com.revature.models.User;
 import com.revature.service.PostService;
+import com.revature.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 @RestController("postController")
 @RequestMapping(value="api")
 @CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class PostController {
     private PostService postService;
+
+    @Autowired
+    private S3Service s3Service;
 
     @Autowired
     public PostController(PostService postService){
@@ -57,5 +61,12 @@ public class PostController {
         }else{
             return new JsonResponse(false, "User ID " + userIdFk + " does not exist.", null);
         }
+    }
+
+    @PostMapping("postImage")
+    public JsonResponse createNewPostImage(@RequestBody PostImage postImage){
+        String url = this.s3Service.getURL(postImage.getPostImageName());
+        PostImage pi = this.postService.createNewPostImage(url,postImage);
+        return new JsonResponse(true,"postImage created",pi);
     }
 }

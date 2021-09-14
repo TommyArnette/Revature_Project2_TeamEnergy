@@ -14,17 +14,8 @@ import java.util.List;
 public class LikeService {
     private LikeDao likeDao;
 
-
     @Autowired
     public LikeService(LikeDao likeDao){this.likeDao = likeDao;}
 
-   // public List<Likes> selectLikesByPostId(Integer postIdFk){return this.likeDao.findLikeByPostId(postIdFk);}
-
     public Likes createLike(Likes likes){return this.likeDao.save(likes);}
-
-    public List <Likes> getAlllike (){return this.likeDao.findAll();}
-
-
-
-
 }
