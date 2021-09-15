@@ -33,4 +33,14 @@ public class LikeService {
      * @return      Returns a Like objects
      */
     public Likes createLike(Likes likes){return this.likeDao.save(likes);}
+
+    public void deleteLike(Integer likeId){
+        Likes like = this.likeDao.findById(likeId).orElse(null);
+
+        if(like == null){
+            return;
+        }
+
+        this.likeDao.delete(like);
+    }
 }

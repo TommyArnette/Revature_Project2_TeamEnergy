@@ -56,4 +56,10 @@ public class LikeController {
 
         return  jsonResponse;
     }
+
+    @DeleteMapping("likes/{likeId}")
+    public JsonResponse deleteLike(@PathVariable Integer likeId){
+        this.likeService.deleteLike(likeId);
+        return new JsonResponse(true, "Like removed.", null);
+    }
 }
