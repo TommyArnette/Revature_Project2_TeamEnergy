@@ -11,12 +11,21 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
+/**
+ * Controller for Like HTTP methods and endpoints.
+ * @RestController is used to imply JSON request body language
+ * @CrossOrigin is used to solve browser CORS error messaging
+ * Initial endpoint "api" defined by the @RequestMapping annotation
+ */
 @RestController("postController")
 @RequestMapping(value="api")
 @CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
 public class PostController {
     private PostService postService;
 
+    /**
+     * References the S3Service class to allow image uploading functionality.
+     */
     @Autowired
     private S3Service s3Service;
 
@@ -25,16 +34,29 @@ public class PostController {
         this.postService = postService;
     }
 
+    /**
+     * Gets all Post objects regardless of User.
+     *
+     * @return  returns a List of Posts
+     * */
     @GetMapping("posts")
     public JsonResponse getAllPosts(){
         return new JsonResponse(true, "All posts obtained.", this.postService.selectAllPosts());
     }
 
+    /**
+     * Used to create a new Post object and associate it with a specific User object.
+     *
+     * @param post      Passes a new Post object to the method (information obtained from request body)
+     * @return          returns a JsonResponse message
+     */
     @PostMapping("posts")
     public JsonResponse createNewPost(@RequestBody Post post){
         JsonResponse jsonResponse;
 
         User user = post.getUser();
+        //User user = (User) session.getAttribute("loggedInUser");
+        //This commented code was breaking the front end. User session info is stored in front end.
 
         if(user != null){
             post.setUserIdFk(user.getUserId());
@@ -54,6 +76,12 @@ public class PostController {
         return  jsonResponse;
     }
 
+    /**
+     * Obtains all Post objcts specific to a User Id
+     *
+     * @param userIdFk  User Id passed to method to obtain all Posts associated with this User object
+     * @return          returns JsonResponse message
+     */
     @GetMapping("posts/{userIdFk}")
     public JsonResponse getPostsByUserId(@PathVariable Integer userIdFk){
         if(userIdFk != null){
@@ -63,6 +91,12 @@ public class PostController {
         }
     }
 
+    /**
+     * Used to create new PostImage object. Associates a newly uploaded image with a Post object.
+     *
+     * @param postImage passes the PostImage object to the method
+     * @return          returns JsonResponse message
+     */
     @PostMapping("postImage")
     public JsonResponse createNewPostImage(@RequestBody PostImage postImage){
         PostImage pi = this.postService.createNewPostImage(postImage);

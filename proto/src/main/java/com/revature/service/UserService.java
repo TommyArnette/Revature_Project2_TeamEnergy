@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.Properties;
 import java.util.UUID;
 
+/**
+ * Service associated with User service methods.
+ * References the UserDao.
+ */
 @Service("userService")
 public class UserService {
     private UserDao userDao;
@@ -24,22 +28,64 @@ public class UserService {
     @Autowired
     public UserService(UserDao userDao){this.userDao = userDao;}
 
+    /**
+     * Obtains a List of all Users registered with the Team Energy Social Network.
+     * @return  returns a List of type User
+     */
     public List<User> selectAllUsers(){return this.userDao.findAll();}
 
+    /**
+     * Obtains a User specific to the userId passed to the method.
+     * This method utilizes the Optional<T> method. If no User objects are found, "null" is returned.
+     *
+     * @param userId userId associated with a registered User
+     * @return       returns a User object
+     */
     public User selectUserById(Integer userId){return this.userDao.findById(userId).orElse(null);}
 
+    /**
+     * Obtains a User specific to the username passed to the method.
+     *
+     * @param username  username associated with a registered User
+     * @return          returns the specific User object
+     */
     public User selectUserByUsername(String username){return this.userDao.selectUserByName(username);}
 
+    /**
+     * Obtains a User specific to the userEmail information provided to the method.
+     *
+     * @param userEmail email associated with a registered User.
+     * @return          returns the specific User object
+     */
     public User selectUserByEmail(String userEmail){return  this.userDao.findByEmail(userEmail);}
 
+    /**
+     * Generates a password reset token necessary for successful password reset.
+     *
+     * @param user      User object passed to the method
+     * @return          returns a User object
+     * @throws MessagingException   throws an exception if WHY???
+     */
     public User generateLink(User user) throws MessagingException {
         user.setResetToken(UUID.randomUUID().toString());
         emailSenduserLink(user);
         return this.userDao.save(user);
     }
 
+    /**
+     * Obtains a User specific to the password reset token associated with the object.
+     *
+     * @param resetToken   reset token is created and associated with a User when they attempt to reset password
+     * @return             returns User object that matches the password reset token
+     */
     public User selectByToken(String resetToken){return this.userDao.findByResetToken(resetToken);}
 
+    /**
+     * Saves the User object when they have successfully reset their password
+     *
+     * @param user  User that is changing their password
+     * @return      returns User object with successful password reset
+     */
     public User saveUserWithNewPassword(User user){
         User u = this.userDao.findById(user.getUserId()).orElse(null);
         //u.setPassword(u.getPassword());
@@ -48,6 +94,14 @@ public class UserService {
         return this.userDao.save(u);
     }
 
+    /**
+     * Used to register a new user to the Team Energy Social Network.
+     * This method automatically encrypts the password entered by the User object.
+     *
+     * @param user references a new User object
+     * @return     returns a new User object
+     * @throws javax.mail.MessagingException    throws an exception if an invalid email is found
+     */
     public User registerNewUser(User user) throws javax.mail.MessagingException{
         User temp = selectUserByUsername(user.getUsername());
 
@@ -55,11 +109,20 @@ public class UserService {
             user.setPassword(new BasicPasswordEncryptor().encryptPassword(user.getPassword()));
            // sendWelcomeEmail(user);
             return this.userDao.save(user);
-
         }
         return null;
     }
 
+    /**
+     * This method is used to update the profile information associated with a User.
+     * This can be used to update multiple pieces of User information at once (EX. First name, Last name, email) or
+     * one piece of information in a single transaction.
+     * Returns a null value if the user does not exist.
+     * NOTE: This method DOES NOT update a User's password.
+     *
+     * @param user  passed a registered User object
+     * @return      returns a User object (same User object with updated information)
+     */
     public User updateUser(User user){
         User u = this.userDao.findById(user.getUserId()).orElse(null);
 
@@ -71,28 +134,38 @@ public class UserService {
             u.setUserProfileImage(u.getUserProfileImage());
             return this.userDao.save(u);
         }
-
         return null;
     }
 
+    /**
+     * Method is used to log a User into the Team Energy Social Network.
+     * The method checks that a username matches data in the database. If the username matches, then it checks to see
+     * if the password matches the database. If the username does not match, it returns null.
+     * If the username matches, but the password does not match, it returns null.
+     * If both the username and password matches, the user successfully logs in.
+     *
+     * @param user  passes the User object attempting ot login
+     * @return      returns a User object
+     */
     public User login(User user){
-
         User currentUser = userDao.selectUserByName(user.getUsername());
 
         if(currentUser == null) {
             return null;
         }else{
             if(new BasicPasswordEncryptor().checkPassword(user.getPassword(), currentUser.getPassword())) {
-               // System.out.println(user.getPassword());
-               // System.out.println(currentUser.getPassword());
                 return currentUser;
             }
-
         }
-
         return null;
     }
 
+    /**
+     * Used to send a welcome email to the User that successfully registered with Team Energy Social Network.
+     *
+     * @param user                              The User object successfully registered is passed to this method.
+     * @throws javax.mail.MessagingException    Triggered if an invalid email is provided
+     */
     public void sendWelcomeEmail(User user) throws javax.mail.MessagingException {
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -127,7 +200,11 @@ public class UserService {
         Transport.send(message);
     }
 
-
+    /**
+     * Used to send a User object a link to reset their password after indicating they need to reset their password.
+     *
+     * @param user  passed the User object that needs to reset their password
+     */
     public void emailSenduserLink(User user){
         //user email
         String appUrl = "http://localhost:9000/api/user/token/%22+user.getResetToken()";
@@ -169,9 +246,6 @@ public class UserService {
 
             // Send message
             Transport.send(message);
-
-
-
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
