@@ -27,7 +27,6 @@ public class S3Service {
     private String region = S3Util.region;
     private String bucketName = S3Util.bucketName;
 
-
     BasicAWSCredentials awsCredentials = new BasicAWSCredentials(awsID,awsKey);
 
     AmazonS3 s3Client = AmazonS3ClientBuilder

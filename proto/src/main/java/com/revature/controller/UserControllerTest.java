@@ -11,8 +11,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.mail.MessagingException;
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +27,11 @@ class UserControllerTest {
     @BeforeEach
     void setUp() {
         this.userController = new UserController(userService);
-
     }
 
+    /**
+     * Test created to compare the expected List of Users returned when selecting all Users versus the actual result.
+     */
     @Test
     void selectAllUsers() {
         //assign
@@ -49,6 +49,9 @@ class UserControllerTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test created to compare expected User object returned when querying the database for a specific userId
+     */
     @Test
     void selectUserByIdNotNull() {
         //assign
@@ -63,6 +66,9 @@ class UserControllerTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test created to compare the expected User object returned when an invalid userId is entered.
+     */
     @Test
     void selectUserByIdNull() {
         //assign

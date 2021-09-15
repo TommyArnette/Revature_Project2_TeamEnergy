@@ -123,7 +123,6 @@ public class UserController {
             jsonResponse= new JsonResponse(true, "Login and session created.",tUser);
             session.setAttribute("loggedInUser",tUser);
         }
-
         return jsonResponse;
     }
 
@@ -199,5 +198,4 @@ public class UserController {
         }
         return jsonResponse;
     }
-
 }

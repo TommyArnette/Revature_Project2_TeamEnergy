@@ -15,5 +15,4 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository("postImageDao")
 @Transactional
-public interface PostImageDao extends JpaRepository<PostImage, Integer> {
-}
+public interface PostImageDao extends JpaRepository<PostImage, Integer> { }

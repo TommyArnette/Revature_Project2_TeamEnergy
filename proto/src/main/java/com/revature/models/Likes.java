@@ -36,7 +36,6 @@ public class Likes {
 
     @Column(name="user_Id_like")
     private Integer userIdL;
-    //cascade = CascadeType.ALL,
 
     @Column(name="post_id_fk")
     private Integer postIdFk;

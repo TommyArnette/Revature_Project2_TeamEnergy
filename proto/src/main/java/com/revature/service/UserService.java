@@ -109,7 +109,6 @@ public class UserService {
             user.setPassword(new BasicPasswordEncryptor().encryptPassword(user.getPassword()));
            // sendWelcomeEmail(user);
             return this.userDao.save(user);
-
         }
         return null;
     }
@@ -118,6 +117,7 @@ public class UserService {
      * This method is used to update the profile information associated with a User.
      * This can be used to update multiple pieces of User information at once (EX. First name, Last name, email) or
      * one piece of information in a single transaction.
+     * Returns a null value if the user does not exist.
      * NOTE: This method DOES NOT update a User's password.
      *
      * @param user  passed a registered User object
@@ -134,7 +134,6 @@ public class UserService {
             u.setUserProfileImage(u.getUserProfileImage());
             return this.userDao.save(u);
         }
-
         return null;
     }
 
@@ -149,7 +148,6 @@ public class UserService {
      * @return      returns a User object
      */
     public User login(User user){
-
         User currentUser = userDao.selectUserByName(user.getUsername());
 
         if(currentUser == null) {

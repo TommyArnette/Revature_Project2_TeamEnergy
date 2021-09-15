@@ -22,7 +22,6 @@ import java.util.Optional;
 @Repository("postDao")
 @Transactional
 public interface PostDao extends JpaRepository<Post, Integer> {
-
     /**
      * Returns a list of Posts for a specific userId.
      *

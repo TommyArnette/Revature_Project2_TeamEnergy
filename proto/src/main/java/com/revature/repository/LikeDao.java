@@ -16,6 +16,4 @@ import java.util.List;
  */
 @Repository("likeDao")
 @Transactional
-public interface LikeDao extends JpaRepository<Likes, Integer> {
-
-}
+public interface LikeDao extends JpaRepository<Likes, Integer> { }

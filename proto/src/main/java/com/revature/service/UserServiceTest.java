@@ -29,6 +29,9 @@ class UserServiceTest {
         this.userService = new UserService(userDao);
     }
 
+    /**
+     * Test to compare expected list of user objects to the actual list of user objects returned
+     */
     @Test
     void selectAllUsers() {
         //assign
@@ -43,6 +46,9 @@ class UserServiceTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test to compare expected user object returned by specific userId to the actual user object returned.
+     */
     @Test
     void selectUserByIdNotNull() {
         //assign
@@ -57,6 +63,9 @@ class UserServiceTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test created to compare the expected User object returned when an invalid userId is entered.
+     */
     @Test
     void selectUserByIdNull(){
         //assign

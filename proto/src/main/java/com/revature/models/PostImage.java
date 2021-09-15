@@ -24,7 +24,6 @@ import javax.persistence.*;
 @Entity
 @Table(name="postImages")
 public class PostImage {
-
     @Id
     @Column(name="post_image_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

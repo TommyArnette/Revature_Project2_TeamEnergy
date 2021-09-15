@@ -44,7 +44,6 @@ public class LikeController {
 
             Likes newLike = this.likeService.createLike(likes);
 
-
             if(newLike != null){
                 jsonResponse = new JsonResponse(true, "Like created.", likes);
             }else{

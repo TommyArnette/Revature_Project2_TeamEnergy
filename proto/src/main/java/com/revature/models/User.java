@@ -54,11 +54,8 @@ public class User {
     @Column(name="user_profile_image")
     private String userProfileImage;
 
-    @Column(name = "reset_token")//add
-    private String resetToken;//add
-
-   // @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-   // private List<Post> userPostList = new ArrayList<>();
+    @Column(name = "reset_token")
+    private String resetToken;
 
     /**
      * Constructor with username and password parameters.
@@ -113,5 +110,4 @@ public class User {
         this.userProfileDescription = userProfileDescription;
         this.userProfileImage = userProfileImage;
     }
-
 }

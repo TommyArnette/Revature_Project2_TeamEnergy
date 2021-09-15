@@ -22,7 +22,6 @@ import javax.transaction.Transactional;
 @Repository("userDao")
 @Transactional
 public interface UserDao extends JpaRepository<User, Integer> {
-
     /**
      * Selects a User based on their username.
      *
@@ -49,5 +48,4 @@ public interface UserDao extends JpaRepository<User, Integer> {
      */
     @Query("from User where resetToken= :resetToken")
     User findByResetToken(@Param("resetToken")String resetToken);
-
 }
