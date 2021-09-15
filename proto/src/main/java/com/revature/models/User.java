@@ -17,7 +17,7 @@ import java.util.List;
  * can enter a profile description (optional), and may upload a profile image (optional).
  *
  * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
- * and @AllArgsConstructor.
+ * and @AllArgsConstructor annotations.
  *
  * Additional constructors were created in this model class to provide improved flexibility when creating functionality.
  */

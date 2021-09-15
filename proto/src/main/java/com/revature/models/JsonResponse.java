@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
  * Creates a JsonResponse object.
  *
  * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
- * and @AllArgsConstructor.
+ * and @AllArgsConstructor annotations.
  */
 
 @Data

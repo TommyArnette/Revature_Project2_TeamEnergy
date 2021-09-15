@@ -15,7 +15,7 @@ import javax.persistence.*;
  * the name of the image, and a foreign key reference to the post.
  *
  * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
- * and @AllArgsConstructor.
+ * and @AllArgsConstructor annotations.
  */
 
 @Data

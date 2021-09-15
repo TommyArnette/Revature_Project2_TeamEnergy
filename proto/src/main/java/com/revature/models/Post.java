@@ -20,7 +20,7 @@ import java.util.List;
  * posts (zero, one, or many posts may be uploaded per post) associated with the post.
  *
  * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
- * and @AllArgsConstructor.
+ * and @AllArgsConstructor annotations.
  */
 
 @Data
