@@ -91,4 +91,27 @@ public class User {
         this.userEmail = userEmail;
     }
 
+    /**
+     * Created a new Constructor for testing methods
+     *
+     * @param userId
+     * @param username
+     * @param password
+     * @param userFirstName
+     * @param userLastName
+     * @param userEmail
+     * @param userProfileDescription
+     * @param userProfileImage
+     */
+    public User(Integer userId, String username, String password, String userFirstName, String userLastName, String userEmail, String userProfileDescription, String userProfileImage) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.userFirstName = userFirstName;
+        this.userLastName = userLastName;
+        this.userEmail = userEmail;
+        this.userProfileDescription = userProfileDescription;
+        this.userProfileImage = userProfileImage;
+    }
+
 }
