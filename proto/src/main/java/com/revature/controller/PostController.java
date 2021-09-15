@@ -55,7 +55,7 @@ public class PostController {
     public JsonResponse createNewPost(HttpSession session, @RequestBody Post post){
         JsonResponse jsonResponse;
 
-        User user = post.getUser();
+        User user = (User) session.getAttribute("loggedInUser");
 
         if(user != null){
             post.setUserIdFk(user.getUserId());
