@@ -1,7 +1,8 @@
-package com.revature.service;
+package com.revature;
 
 import com.revature.models.User;
 import com.revature.repository.UserDao;
+import com.revature.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

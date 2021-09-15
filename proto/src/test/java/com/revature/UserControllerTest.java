@@ -1,5 +1,6 @@
-package com.revature.controller;
+package com.revature;
 
+import com.revature.controller.UserController;
 import com.revature.models.JsonResponse;
 import com.revature.models.User;
 import com.revature.service.UserService;
