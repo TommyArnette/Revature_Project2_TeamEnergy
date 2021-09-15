@@ -9,6 +9,20 @@ import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * The Post model class represents the information associated with a social media post made by a user.
+ * The object information includes an auto-incrementing primary key postId, the date the post was created,
+ * the message contained within the post, a reference to the userId of the user that posted, and it contains two lists.
+ *
+ * Creates a Post object.
+ *
+ * These lists represent the likes (multiple likes can be associated with one post) assigned to the post, and the
+ * posts (zero, one, or many posts may be uploaded per post) associated with the post.
+ *
+ * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
+ * and @AllArgsConstructor.
+ */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

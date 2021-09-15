@@ -5,6 +5,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
+/**
+ * The Likes model class represents a "Like" that a user can indicate on another user's post.
+ * This class contains an auto-incrementing primary key likeId, a reference to the user first name,
+ * a reference to the user last name, a foreign key reference to the userId, and a foreign key reference
+ * to the postId.
+ *
+ * Creates a Like object.
+ *
+ * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
+ * and @AllArgsConstructor.
+ */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor

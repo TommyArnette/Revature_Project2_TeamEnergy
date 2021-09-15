@@ -8,6 +8,20 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The User model class represents a user that is registered with the Team Energy Social Network.
+ * Creates a User object.
+ *
+ * The user is assigned an auto-incrementing primary key userId, must create their own username and password,
+ * inputs their first name (userFirstName) and last name (userLastName), enters their email (userEmail),
+ * can enter a profile description (optional), and may upload a profile image (optional).
+ *
+ * The Lombok dependency eliminates boilerplate getter and setter and constructor code with the @Data, @NoArgsConstructor,
+ * and @AllArgsConstructor.
+ *
+ * Additional constructors were created in this model class to provide improved flexibility when creating functionality.
+ */
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -45,6 +59,14 @@ public class User {
 
    // @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
    // private List<Post> userPostList = new ArrayList<>();
+
+    /**
+     * Constructor with username and password parameters.
+     *
+     * @param username The unique username of the user
+     * @param password The password of the user
+     * @return         Returns a User object
+     */
 
     public User(String username, String password) {
         this.username = username;
