@@ -31,7 +31,7 @@ public class PostController {
     }
 
     @PostMapping("posts")
-    public JsonResponse createNewPost(HttpSession session, @RequestBody Post post){
+    public JsonResponse createNewPost(@RequestBody Post post){
         JsonResponse jsonResponse;
 
         User user = post.getUser();
