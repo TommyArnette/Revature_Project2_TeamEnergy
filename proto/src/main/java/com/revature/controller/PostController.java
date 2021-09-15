@@ -47,15 +47,16 @@ public class PostController {
     /**
      * Used to create a new Post object and associate it with a specific User object.
      *
-     * @param session   used to obtain User object information to associate with newly created Post object.
      * @param post      Passes a new Post object to the method (information obtained from request body)
      * @return          returns a JsonResponse message
      */
     @PostMapping("posts")
-    public JsonResponse createNewPost(HttpSession session, @RequestBody Post post){
+    public JsonResponse createNewPost(@RequestBody Post post){
         JsonResponse jsonResponse;
 
-        User user = (User) session.getAttribute("loggedInUser");
+        User user = post.getUser();
+        //User user = (User) session.getAttribute("loggedInUser");
+        //This commented code was breaking the front end. User session info is stored in front end.
 
         if(user != null){
             post.setUserIdFk(user.getUserId());
