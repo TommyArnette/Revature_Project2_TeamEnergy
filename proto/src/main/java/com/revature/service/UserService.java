@@ -127,11 +127,11 @@ public class UserService {
         User u = this.userDao.findById(user.getUserId()).orElse(null);
 
         if(u != null){
-            u.setUserFirstName(u.getUserFirstName());
-            u.setUserLastName(u.getUserLastName());
-            u.setUserEmail(u.getUserEmail());
-            u.setUserProfileDescription(u.getUserProfileImage());
-            u.setUserProfileImage(u.getUserProfileImage());
+            u.setUserFirstName(user.getUserFirstName());
+            u.setUserLastName(user.getUserLastName());
+            u.setUserEmail(user.getUserEmail());
+            u.setUserProfileDescription(user.getUserProfileDescription());
+            u.setUserProfileImage(user.getUserProfileImage());
             return this.userDao.save(u);
         }
         return null;
