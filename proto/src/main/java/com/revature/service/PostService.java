@@ -42,12 +42,17 @@ public class PostService {
      */
     public List<Post> selectAllPosts(){return this.postDao.findAll();}
 
-
-    public List<Post>selectPostMinMax(Integer min, Integer max){
-
+    /**
+     * Used to select a specific number of posts between the min and max range. Used for pagination to only fetch a
+     * specific amount of posts at once.
+     *
+     * @param min   lower limit for the posts to be returned
+     * @param max   upper limit for the posts to be returned
+     * @return      returns a list of posts
+     */
+    public List<Post> selectPostMinMax(Integer min, Integer max){
         return this.postDao.findPostBypostIdBetween(min,max);
     }
-
 
     /**
      * Obtains a List of all Posts specific to a userId

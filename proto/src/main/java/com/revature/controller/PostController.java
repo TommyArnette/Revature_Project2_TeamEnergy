@@ -44,18 +44,20 @@ public class PostController {
         return new JsonResponse(true, "All posts obtained.", this.postService.selectAllPosts());
     }
 
+    /**
+     * Used to get posts between the specified range of numbers.
+     * Ex. Page 2 will list posts 21 through 40.
+     *
+     * @param page  number representing the page a user is on to view posts
+     * @return      returns a JsonResponse
+     */
     @GetMapping("posts/pages/{page}")
     public JsonResponse getPostBetween(@PathVariable Integer page){
-
         Integer x=page*20-19;
         Integer y=page*20;
 
-        return new JsonResponse(true,  "posts between: "+ x +"and" + y+"from page"+page , this.postService.selectPostMinMax(x,y));
-
+        return new JsonResponse(true,  "Posts between: "+ x +" and " + y + " from page " + page , this.postService.selectPostMinMax(x,y));
     }
-
-
-
 
     /**
      * Used to create a new Post object and associate it with a specific User object.
