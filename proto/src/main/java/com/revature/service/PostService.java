@@ -42,6 +42,13 @@ public class PostService {
      */
     public List<Post> selectAllPosts(){return this.postDao.findAll();}
 
+
+    public List<Post>selectPostMinMax(Integer min, Integer max){
+
+        return this.postDao.findPostBypostIdBetween(min,max);
+    }
+
+
     /**
      * Obtains a List of all Posts specific to a userId
      *

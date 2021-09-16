@@ -44,6 +44,19 @@ public class PostController {
         return new JsonResponse(true, "All posts obtained.", this.postService.selectAllPosts());
     }
 
+    @GetMapping("posts/pages/{page}")
+    public JsonResponse getPostBetween(@PathVariable Integer page){
+
+        Integer x=page*20-19;
+        Integer y=page*20;
+
+        return new JsonResponse(true,  "posts between: "+ x +"and" + y+"from page"+page , this.postService.selectPostMinMax(x,y));
+
+    }
+
+
+
+
     /**
      * Used to create a new Post object and associate it with a specific User object.
      *

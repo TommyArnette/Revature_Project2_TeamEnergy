@@ -29,4 +29,7 @@ public interface PostDao extends JpaRepository<Post, Integer> {
      * @return          List of Posts for a specific userId
      */
     List<Post> findPostByUserIdFk(Integer userIdFk);
+
+    List<Post>findPostBypostIdBetween(Integer min, Integer max);
+
 }
