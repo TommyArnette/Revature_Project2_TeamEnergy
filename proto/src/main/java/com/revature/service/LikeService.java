@@ -34,6 +34,11 @@ public class LikeService {
      */
     public Likes createLike(Likes likes){return this.likeDao.save(likes);}
 
+    /**
+     * Obtains the Like object information by likeId and deletes the Like from the Post object.
+     *
+     * @param likeId    ID for the Like object to be deleted
+     */
     public void deleteLike(Integer likeId){
         Likes like = this.likeDao.findById(likeId).orElse(null);
 

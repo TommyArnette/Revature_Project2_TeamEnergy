@@ -25,7 +25,6 @@ public class LikeController {
     /**
      * POST method used to create a new Like object and associated it with a specific Post object.
      *
-     * @param session   information obtianed from the session informatin associated with a signed in User
      * @param likes     passes a Like object to the method
      * @return          returns a JsonResponse method (containing success, message, data)
      */
@@ -43,6 +42,13 @@ public class LikeController {
         return jsonResponse;
     }
 
+    /**
+     * Method to delete a like that has been assigned to a Post object. In the project, when a user clicks on a Post that
+     * they had liked, this method will be called and the like will be deleted.
+     *
+     * @param likeId    the ID of the like object to be removed
+     * @return          returns a JsonResponse
+     */
     @DeleteMapping("likes/{likeId}")
     public JsonResponse deleteLike(@PathVariable Integer likeId){
         this.likeService.deleteLike(likeId);
