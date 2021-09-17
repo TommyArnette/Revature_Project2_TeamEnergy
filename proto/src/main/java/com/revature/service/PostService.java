@@ -9,6 +9,8 @@ import com.revature.repository.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -46,12 +48,34 @@ public class PostService {
      * Used to select a specific number of posts between the min and max range. Used for pagination to only fetch a
      * specific amount of posts at once.
      *
-     * @param min   lower limit for the posts to be returned
-     * @param max   upper limit for the posts to be returned
+     * @param page  page the user is on in the feed when viewing posts
      * @return      returns a list of posts
      */
-    public List<Post> selectPostMinMax(Integer min, Integer max){
-        return this.postDao.findPostBypostIdBetween(min,max);
+    public List<Post> selectPostMinMax(Integer page){
+        double totalPost =postDao.findAll().size();
+        double min ,max;
+        //double round=totalpost/20;
+        //double num = (double) (Math.ceil(round));
+        max = (page*20)-20;
+        max=totalPost-max;
+        min = (page*20);
+        min=totalPost-min+1;
+        if(min<=1){
+            min=1;
+            int value1 = (int)min;
+            int value2 = (int)max;
+            List<Post> nlist=this.postDao.findPostBypostIdBetween(value1,value2);
+            Collections.sort(nlist,
+                    Comparator.comparingInt(Post::getPostId).reversed());
+            return nlist;
+        }else{
+            int value1 = (int)min;
+            int value2 = (int)max;
+            List <Post> nlist=this.postDao.findPostBypostIdBetween(value1,value2);
+            Collections.sort(nlist,
+                    Comparator.comparingInt(Post::getPostId).reversed());
+            return nlist;
+        }
     }
 
     /**
