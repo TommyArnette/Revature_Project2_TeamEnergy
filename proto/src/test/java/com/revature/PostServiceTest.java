@@ -17,6 +17,9 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Tests associated with the PostService class.
+ */
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class PostServiceTest {
@@ -30,6 +33,9 @@ public class PostServiceTest {
         this.postService = new PostService(postDao);
     }
 
+    /**
+     * Test to compare the expected list of posts returned to the actual list of posts returned.
+     */
     @Test
     void selectAllPosts(){
         //Assign
@@ -44,6 +50,9 @@ public class PostServiceTest {
         assertEquals(expectedResult, actualResult);
     }
 
+    /**
+     * Test to compare the expected list of posts returned for a specific userId to the actual list of posts returned.
+     */
     @Test
     void selectPostByUserId(){
         //Assign

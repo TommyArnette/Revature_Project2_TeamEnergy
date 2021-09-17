@@ -18,6 +18,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
+/**
+ * Tests associated with the PostController class.
+ */
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 public class PostControllerTest {
@@ -31,6 +35,9 @@ public class PostControllerTest {
         this.postController = new PostController(postService);
     }
 
+    /**
+     * Test to compare the expected list of posts returned to the actual list of posts returned.
+     */
     @Test
     void selectAllPosts(){
         //Assign

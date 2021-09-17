@@ -47,6 +47,7 @@ public class PostService {
     /**
      * Used to select a specific number of posts between the min and max range. Used for pagination to only fetch a
      * specific amount of posts at once.
+     * Ordered to show the most recently created posts at the top of the feed.
      *
      * @param page  page the user is on in the feed when viewing posts
      * @return      returns a list of posts

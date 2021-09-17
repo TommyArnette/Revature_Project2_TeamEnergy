@@ -6,9 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-/*
-This is all added to try to allow Users capability to add comments to posts.
-*/
+/**
+ * Comments model class used to instantiate variables associated with comments created by users and assigned to posts.
+ */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

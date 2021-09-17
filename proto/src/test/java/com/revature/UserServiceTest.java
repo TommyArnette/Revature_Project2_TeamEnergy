@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Tests associated with the UserService class.
+ */
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 class UserServiceTest {

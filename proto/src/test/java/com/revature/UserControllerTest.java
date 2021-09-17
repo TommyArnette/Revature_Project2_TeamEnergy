@@ -17,6 +17,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests associated with the UserController class.
+ */
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
 class UserControllerTest {

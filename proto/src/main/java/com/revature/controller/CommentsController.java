@@ -6,6 +6,10 @@ import com.revature.service.CommentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Controller for endpoints that handle the creation of comments.
+ * Users can create comments on posts.
+ */
 @RestController("commentsController")
 @RequestMapping(value="api")
 @CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
@@ -17,6 +21,12 @@ public class CommentsController {
         this.commentsService = commentsService;
     }
 
+    /**
+     * Creates a comment on a post.
+     *
+     * @param comments  the comment the user created and assigned to a post
+     * @return          returns JsonResponse
+     */
     @PostMapping("comments")
     public JsonResponse createNewComment(@RequestBody Comments comments){
         JsonResponse jsonResponse;
