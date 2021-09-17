@@ -127,6 +127,7 @@ public class UserService {
         User u = this.userDao.findById(user.getUserId()).orElse(null);
 
         if(u != null){
+            u.setUsername(user.getUsername());
             u.setUserFirstName(user.getUserFirstName());
             u.setUserLastName(user.getUserLastName());
             u.setUserEmail(user.getUserEmail());
