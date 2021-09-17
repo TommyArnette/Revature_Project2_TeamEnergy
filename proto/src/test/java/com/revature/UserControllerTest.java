@@ -37,7 +37,7 @@ class UserControllerTest {
     void selectAllUsers() {
         //assign
         List<User> users = new ArrayList<>();
-        users.add(new User(1, "test", "pass123", "preston", "bonomo", "pcbonomo@gmail.com", "profile about me", "profile pic"));
+        users.add(new User(1, "testUser", "password", "tommy", "arnette", "tommy.arnette@gmail.com", "just a dude", "whoops.jpg"));
         JsonResponse expectedResult = new JsonResponse(true, "Obtained all users.", users);
 
         //mock user service
@@ -56,7 +56,7 @@ class UserControllerTest {
     @Test
     void selectUserByIdNotNull() {
         //assign
-        User users = new User(1, "test", "pass123", "preston", "bonomo", "pcbonomo@gmail.com", "profile about me", "profile pic");
+        User users = new User(1, "testUser", "password", "tommy", "arnette", "tommy.arnette@gmail.com", "just a dude", "whoops.jpg");
         JsonResponse expectedResult = new JsonResponse(true, "Found user.", users);
         Mockito.when(userService.selectUserById(users.getUserId())).thenReturn(users);
 
@@ -73,7 +73,7 @@ class UserControllerTest {
     @Test
     void selectUserByIdNull() {
         //assign
-        User users = new User(1, "test", "pass123", "preston", "bonomo", "pcbonomo@gmail.com", "profile about me", "profile pic");
+        User users = new User(1, "testUser", "password", "tommy", "arnette", "tommy.arnette@gmail.com", "just a dude", "whoops.jpg");
         JsonResponse expectedResult = new JsonResponse(false, "No user found.", null);
         Mockito.when(userService.selectUserById(users.getUserId())).thenReturn(null);
 

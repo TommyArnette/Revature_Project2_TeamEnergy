@@ -37,7 +37,7 @@ class UserServiceTest {
     void selectAllUsers() {
         //assign
         List<User> expectedResult = new ArrayList<>();
-        expectedResult.add(new User(1,"test","pass123","preston","bonomo","pcbonomo@gmail.com","profile about me","profile pic"));
+        expectedResult.add(new User(1, "testUser", "password", "tommy", "arnette", "tommy.arnette@gmail.com", "just a dude", "whoops.jpg"));
         Mockito.when(userDao.findAll()).thenReturn(expectedResult);
 
         //act
@@ -54,7 +54,7 @@ class UserServiceTest {
     void selectUserByIdNotNull() {
         //assign
         Integer id = 1;
-        User expectedResult = new User(1,"testUser","pass123","preston","bonomo","pcbonomo@gmail.com","profile about me","profile pic");
+        User expectedResult = new User(1, "testUser", "password", "tommy", "arnette", "tommy.arnette@gmail.com", "just a dude", "whoops.jpg");
         Mockito.when(userDao.findById(id)).thenReturn(Optional.of(expectedResult));
 
         //act
