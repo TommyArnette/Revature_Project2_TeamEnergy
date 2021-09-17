@@ -184,7 +184,7 @@ public class UserService {
         message.setFrom(new InternetAddress("mikearcherdev@gmail.com"));
         message.setRecipients(
                 Message.RecipientType.TO, InternetAddress.parse(user.getUserEmail()));
-        message.setSubject("Welcome to Reimbursement App!");
+        message.setSubject("Welcome to the Team Energy Social Network App!");
 
         String msg = "Your account has been created!\n" +
                 "Username: " + user.getUsername() + "\n" +
