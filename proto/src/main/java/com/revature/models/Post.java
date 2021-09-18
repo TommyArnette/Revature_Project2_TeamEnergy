@@ -51,4 +51,15 @@ public class Post {
 
     @OneToMany(mappedBy = "post_fk", cascade = CascadeType.ALL)
     private List<PostImage> postImageList;
+
+    /* Added this code to try to add comments to posts */
+    @OneToMany(mappedBy = "postForeign", cascade = CascadeType.ALL)
+    private List<Comments> comments;
+
+    public Post(Integer postId, Date postCreatedDate, String postMessage, Integer userIdFk) {
+        this.postId = postId;
+        this.postCreatedDate = postCreatedDate;
+        this.postMessage = postMessage;
+        this.userIdFk = userIdFk;
+    }
 }

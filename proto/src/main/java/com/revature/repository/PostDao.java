@@ -29,4 +29,15 @@ public interface PostDao extends JpaRepository<Post, Integer> {
      * @return          List of Posts for a specific userId
      */
     List<Post> findPostByUserIdFk(Integer userIdFk);
+
+    /**
+     * Returns a list of posts within the specified range of numbers. Used to accomplish pagination and only fetch
+     * a specific number of posts at once.
+     *
+     * @param min   lower limit for the post to be returned
+     * @param max   upper limit for the post to be returned
+     * @return      returns a list of posts
+     */
+    List<Post> findPostBypostIdBetween(Integer min, Integer max);
+
 }

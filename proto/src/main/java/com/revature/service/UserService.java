@@ -4,8 +4,6 @@ import com.revature.models.User;
 import com.revature.repository.UserDao;
 import org.jasypt.util.password.BasicPasswordEncryptor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import javax.mail.*;
@@ -127,9 +125,9 @@ public class UserService {
         User u = this.userDao.findById(user.getUserId()).orElse(null);
 
         if(u != null){
+            u.setUsername(user.getUsername());
             u.setUserFirstName(user.getUserFirstName());
             u.setUserLastName(user.getUserLastName());
-            u.setUsername(user.getUsername());
             u.setUserEmail(user.getUserEmail());
             u.setUserProfileDescription(user.getUserProfileDescription());
             u.setUserProfileImage(user.getUserProfileImage());
@@ -184,7 +182,7 @@ public class UserService {
         message.setFrom(new InternetAddress("mikearcherdev@gmail.com"));
         message.setRecipients(
                 Message.RecipientType.TO, InternetAddress.parse(user.getUserEmail()));
-        message.setSubject("Welcome to Reimbursement App!");
+        message.setSubject("Welcome to the Team Energy Social Network App!");
 
         String msg = "Your account has been created!\n" +
                 "Username: " + user.getUsername() + "\n" +

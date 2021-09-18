@@ -5,6 +5,8 @@ import com.revature.models.Likes;
 import com.revature.service.LikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 /**
@@ -42,6 +44,13 @@ public class LikeController {
         return jsonResponse;
     }
 
+    /**
+     * Method to delete a like that has been assigned to a Post object. In the project, when a user clicks on a Post that
+     * they had liked, this method will be called and the like will be deleted.
+     *
+     * @param likeId    the ID of the like object to be removed
+     * @return          returns a JsonResponse
+     */
     @DeleteMapping("likes/{likeId}")
     public JsonResponse deleteLike(@PathVariable Integer likeId){
         this.likeService.deleteLike(likeId);
