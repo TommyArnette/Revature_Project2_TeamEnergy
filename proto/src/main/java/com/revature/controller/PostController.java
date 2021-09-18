@@ -9,7 +9,6 @@ import com.revature.service.S3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 
 /**
  * Controller for Like HTTP methods and endpoints.

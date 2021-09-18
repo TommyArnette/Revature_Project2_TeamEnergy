@@ -65,7 +65,10 @@ public class UserController {
     public JsonResponse updateUser(@RequestBody User user){
         User u = this.userService.updateUser(user);
 
-        return new JsonResponse(true, "User information updated.", user);
+        if (u != null) {
+            return new JsonResponse(true, "User information updated.", user);
+        }
+        return new JsonResponse(false, "Unable to update information", null);
     }
 
     /**
@@ -168,7 +171,7 @@ public class UserController {
         JsonResponse jsonResponse;
         User Nuser = this.userService.selectUserByEmail(user.getUserEmail());
         if (Nuser == null) {
-            jsonResponse = new JsonResponse(false,"Email doesnt exist",null);
+            jsonResponse = new JsonResponse(false,"Email doesn't exist",null);
         }else{
             User sta =this.userService.generateLink(Nuser);
 

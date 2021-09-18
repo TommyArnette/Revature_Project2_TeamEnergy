@@ -25,7 +25,6 @@ public class LikeController {
     /**
      * POST method used to create a new Like object and associated it with a specific Post object.
      *
-     * @param session   information obtianed from the session informatin associated with a signed in User
      * @param likes     passes a Like object to the method
      * @return          returns a JsonResponse method (containing success, message, data)
      */
@@ -34,7 +33,7 @@ public class LikeController {
         JsonResponse jsonResponse;
 
         Likes newLike = this.likeService.createLike(likes);
-        
+
         if(newLike != null){
             jsonResponse = new JsonResponse(true, "Like created.", likes);
         }else{
