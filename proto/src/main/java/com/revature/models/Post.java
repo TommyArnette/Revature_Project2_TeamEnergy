@@ -42,7 +42,7 @@ public class Post {
     @Column(name="user_id_fk")
     private Integer userIdFk;
 
-    @JoinColumn(name = "user", referencedColumnName = "user_id")
+    @JoinColumn(name = "users", referencedColumnName = "user_id")
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
