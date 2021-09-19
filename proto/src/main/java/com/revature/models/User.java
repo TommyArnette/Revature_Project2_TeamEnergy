@@ -45,7 +45,7 @@ public class User {
     @Column(name="user_last_name", nullable = false, columnDefinition = "varchar(50)")
     private String userLastName;
 
-    @Column(name="user_email", nullable = false, columnDefinition = "varchar(100)")
+    @Column(name="user_email", unique = true, nullable = false, columnDefinition = "varchar(100)")
     private String userEmail;
 
     @Column(name="user_profile_description", columnDefinition = "varchar(300)")

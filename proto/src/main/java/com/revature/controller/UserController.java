@@ -89,6 +89,15 @@ public class UserController {
         return jsonResponse;
     }
 
+    @GetMapping("user/token/{resetToken}")
+    public JsonResponse selectUserByResetToken(@PathVariable String resetToken){
+        User user = this.userService.selectByToken(resetToken);
+        if (user != null){
+            return new JsonResponse(true,"Found user.",user);
+        }
+        return new JsonResponse(false,"No user found.",null);
+    }
+
     /**
      * Used to select a User object by their username.
      *
@@ -173,7 +182,7 @@ public class UserController {
         if (Nuser == null) {
             jsonResponse = new JsonResponse(false,"Email doesn't exist",null);
         }else{
-            User sta =this.userService.generateLink(Nuser);
+            User sta = this.userService.generateLink(Nuser);
 
             jsonResponse= new JsonResponse(true, "Link created and send",sta);
         }
@@ -187,17 +196,14 @@ public class UserController {
      * @param resetToken    password reset token that is used to verify the User object and reset password
      * @return              returns JsonResponse indicating password reset success and updated user information
      */
-    @PostMapping("user/token/{resetToken}")
-    public JsonResponse createNewPass(@RequestBody User user, @PathVariable String resetToken){
+    @PostMapping("user/resetPassword")
+    public JsonResponse createNewPass(@RequestBody User user){
         JsonResponse jsonResponse;
-        User Nuser = this.userService.selectByToken(resetToken);
 
-        if (Nuser == null) {
-            jsonResponse = new JsonResponse(false,"token invalid",null);
+        if (user == null) {
+            jsonResponse = new JsonResponse(false,"Invalid request",null);
         }else{
-            Nuser.setPassword(user.getPassword());
-
-            jsonResponse= new JsonResponse(true, "Link created and send",this.userService.saveUserWithNewPassword(Nuser));
+            jsonResponse= new JsonResponse(true, "password updated",this.userService.saveUserWithNewPassword(user));
         }
         return jsonResponse;
     }

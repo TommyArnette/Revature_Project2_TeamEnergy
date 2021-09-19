@@ -85,11 +85,9 @@ public class UserService {
      * @return      returns User object with successful password reset
      */
     public User saveUserWithNewPassword(User user){
-        User u = this.userDao.findById(user.getUserId()).orElse(null);
-        //u.setPassword(u.getPassword());
-        u.setPassword(new BasicPasswordEncryptor().encryptPassword(user.getPassword()));
-        u.setResetToken(null);
-        return this.userDao.save(u);
+        user.setPassword(new BasicPasswordEncryptor().encryptPassword(user.getPassword()));
+        user.setResetToken(null);
+        return this.userDao.save(user);
     }
 
     /**
@@ -206,13 +204,13 @@ public class UserService {
      */
     public void emailSenduserLink(User user){
         //user email
-        String appUrl = "http://localhost:9000/api/user/token/%22+user.getResetToken()";
+        String appUrl = "http://localhost:4200/forgot/" + user.getResetToken();
         String to = user.getUserEmail();
 
         // company email
-        String from = "ryan50534535@gmail.com";
-        final String username = "ryan50534535@gmail.com";//your gmail username
-        final String password = "rafasdasad";//your gmail password
+        String from = "revbook@revbook.com";
+        final String username = "project2smtpemail@gmail.com";//your gmail username
+        final String password = "revbook123";//your gmail password
         //using gmail to send mail
         String host = "smtp.gmail.com";
 
@@ -238,10 +236,10 @@ public class UserService {
                     InternetAddress.parse(to));
 
             // set subject in the email sent
-            message.setSubject("Welcome to the The Reimbursement App");
+            message.setSubject("Revbook: Forgot Password?");
 
             // Put the content of your message
-            message.setText("Hello there your recover link is: "+appUrl);
+            message.setText("Please follow this link to reset your password: " + appUrl);
 
             // Send message
             Transport.send(message);

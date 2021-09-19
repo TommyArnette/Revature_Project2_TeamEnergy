@@ -52,12 +52,12 @@ public class PostController {
      */
     @GetMapping("posts/pages/{page}")
     public JsonResponse getPostBetween(@PathVariable Integer page){
-        /*Integer x=page*20-19;
-        Integer y=page*20;
-
-        return new JsonResponse(true,  "Posts between: "+ x +" and " + y + " from page " + page , this.postService.selectPostMinMax(x,y));*/
-
         return new JsonResponse(true, "Posts from page: " + page, this.postService.selectPostMinMax(page));
+    }
+
+    @GetMapping("posts/count")
+    public JsonResponse getPostCount(){
+        return new JsonResponse(true, "Number of posts fetched", this.postService.selectPostCount());
     }
 
     /**

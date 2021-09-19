@@ -53,30 +53,22 @@ public class PostService {
      * @return      returns a list of posts
      */
     public List<Post> selectPostMinMax(Integer page){
-        double totalPost =postDao.findAll().size();
-        double min ,max;
-        //double round=totalpost/20;
-        //double num = (double) (Math.ceil(round));
+        int totalPost = (int)postDao.count();
+        int min ,max;
+
         max = (page*20)-20;
-        max=totalPost-max;
+        max= totalPost-max;
         min = (page*20);
-        min=totalPost-min+1;
-        if(min<=1){
-            min=1;
-            int value1 = (int)min;
-            int value2 = (int)max;
-            List<Post> nlist=this.postDao.findPostBypostIdBetween(value1,value2);
-            Collections.sort(nlist,
-                    Comparator.comparingInt(Post::getPostId).reversed());
-            return nlist;
-        }else{
-            int value1 = (int)min;
-            int value2 = (int)max;
-            List <Post> nlist=this.postDao.findPostBypostIdBetween(value1,value2);
-            Collections.sort(nlist,
-                    Comparator.comparingInt(Post::getPostId).reversed());
-            return nlist;
-        }
+        min= totalPost-min+1;
+
+        List<Post> nlist=this.postDao.findPostBypostIdBetween(min, max);
+        Collections.sort(nlist, Comparator.comparingInt(Post::getPostId).reversed());
+
+        return nlist;
+    }
+
+    public Integer selectPostCount(){
+        return (int)postDao.count();
     }
 
     /**
