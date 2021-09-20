@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController("postController")
 @RequestMapping(value="api")
-@CrossOrigin(value = "http://localhost:4200/", allowCredentials = "true")
+@CrossOrigin(value = "http://18.221.238.224:4200", allowCredentials = "true")
 public class PostController {
     private PostService postService;
 

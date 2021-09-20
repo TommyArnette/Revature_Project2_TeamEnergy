@@ -204,7 +204,7 @@ public class UserService {
      */
     public void emailSenduserLink(User user){
         //user email
-        String appUrl = "http://localhost:4200/forgot/" + user.getResetToken();
+        String appUrl = "http://18.221.238.224:4200/forgot/" + user.getResetToken();
         String to = user.getUserEmail();
 
         // company email

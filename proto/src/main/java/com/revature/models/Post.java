@@ -42,7 +42,7 @@ public class Post {
     @Column(name="user_id_fk")
     private Integer userIdFk;
 
-    @JoinColumn(name = "user", referencedColumnName = "user_id")
+    @JoinColumn(name = "users", referencedColumnName = "user_id")
     @ManyToOne(fetch = FetchType.EAGER)
     private User user;
 
@@ -53,8 +53,7 @@ public class Post {
     private List<PostImage> postImageList;
 
     /* Added this code to try to add comments to posts */
-    @OneToMany(mappedBy = "postForeign", cascade = CascadeType.ALL)
-    private List<Comments> comments;
+
 
     public Post(Integer postId, Date postCreatedDate, String postMessage, Integer userIdFk) {
         this.postId = postId;
