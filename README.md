@@ -34,3 +34,5 @@ This social network app allows people to register an account, create a profile, 
 * Users may reset their password
 
 ## Getting Started
+
+## The front end of the project is located in this link: https://github.com/archermichael/Social-Media-App-Frontend.git
