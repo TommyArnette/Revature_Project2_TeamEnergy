@@ -5,7 +5,6 @@ Revature Project 2 Repository
 *  Ezequiel Flores
 *  Michael Archer
 *  Milo Cao
-*  Preston Bonomo
 *  Tommy Arnette
 
 ## Project Description
