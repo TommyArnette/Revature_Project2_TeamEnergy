@@ -35,4 +35,4 @@ This social network app allows people to register an account, create a profile, 
 
 ## Getting Started
 
-# The front end of the project is located in this link: https://github.com/archermichael/Social-Media-App-Frontend.git
+### The front end of the project is located in this link: https://github.com/archermichael/Social-Media-App-Frontend.git
